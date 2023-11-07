@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/exceptions/ResourceExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/exceptions/StandardError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/exceptions/ObjectNotFoundException.java" afterDir="false" />
+    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="tratamento de excessão para objeto não encontrado">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/config/LocalConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RqPautaAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RqPautaAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/_f/desafio/src/test/Resources",
+    "last_opened_file_path": "C:/_f/desafio/src/main/resources",
     "onboarding.tips.debug.path": "C:/_f/desafio/src/main/java/br/com/desafio/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -74,10 +72,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_f\desafio\src\main\resources" />
       <recent name="C:\_f\desafio\src\test\Resources" />
       <recent name="C:\_f\desafio\src\main\java\br\com\desafio\controller" />
       <recent name="C:\_f\desafio\src\main\java\br\com\desafio\model" />
-      <recent name="C:\_f\desafio\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -148,6 +146,15 @@
       <option name="presentableId" value="Default" />
       <updated>1698925209717</updated>
     </task>
+    <task id="LOCAL-00001" summary="tratamento de excessão para objeto não encontrado">
+      <option name="closed" value="true" />
+      <created>1699366775161</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699366775161</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +182,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="tratamento de excessão para objeto não encontrado" />
+    <option name="LAST_COMMIT_MESSAGE" value="tratamento de excessão para objeto não encontrado" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
