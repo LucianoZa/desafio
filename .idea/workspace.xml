@@ -5,37 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/DesafioApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RqPautaAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RqPautaGet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RsPautaAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/Resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/Resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/PautaControllerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,6 +32,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -80,7 +70,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -143,8 +133,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.DesafioApplication" />
+        <item itemvalue="JUnit.PautaControllerImplTest" />
         <item itemvalue="JUnit.All in desafio" />
         <item itemvalue="JUnit.PautaControllerImplTest" />
+        <item itemvalue="JUnit.All in desafio" />
       </list>
     </recent_temporary>
   </component>
@@ -159,19 +151,31 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/br/com/desafio/controller/PautaControllerImplTest.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

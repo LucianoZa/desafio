@@ -18,13 +18,11 @@ public class PautaServiceImpl implements IpautaService{
     PautaDAOImpl dao;
     @Override
     public RsPautaAdd addPauta(RqPautaAdd rqPautaAdd) {
-        RsPautaAdd rsPautaAdd = dao.addPauta(rqPautaAdd);
-        return rsPautaAdd;
+        return dao.addPauta(rqPautaAdd);
     }
 
     @Override
     public List<Pauta> getPauta(String codPauta, RqPautaGet rqPautaGet, Pageable pageable) {
-        List<Pauta> rsPautaGet = dao.getPauta(codPauta, rqPautaGet, pageable);
-        return rsPautaGet;
+        return dao.getPauta(codPauta, rqPautaGet, pageable);
     }
 }

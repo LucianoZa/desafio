@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Pauta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_pauta")
     private Long codPauta;
 
