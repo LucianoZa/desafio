@@ -1,30 +1,24 @@
 package br.com.desafio.controller;
 
-import java.util.List;
-import java.util.Optional;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
 import br.com.desafio.domain.entity.Pauta;
 import br.com.desafio.model.RqPautaAdd;
 import br.com.desafio.model.RqPautaGet;
 import br.com.desafio.model.RsPautaAdd;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
 
 @Api(value = "Desafio", description = "Sessao de votacao API")
-//@RequestMapping(value = "/v1.0")
+//@RequestMapping(value = "/v1")
 public interface IpautaController {
 
 	Logger log = LoggerFactory.getLogger(IpautaController.class);

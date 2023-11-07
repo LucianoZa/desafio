@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IpautaService {
 
-     public RsPautaAdd addPauta(RqPautaAdd rqPautaAdd);
-     public List<Pauta> getPauta(String codPauta, RqPautaGet rqPautaGet, Pageable pageable);
+     RsPautaAdd addPauta(RqPautaAdd rqPautaAdd);
+     List<Pauta> getPauta(String codPauta, RqPautaGet rqPautaGet, Pageable pageable);
 
 }

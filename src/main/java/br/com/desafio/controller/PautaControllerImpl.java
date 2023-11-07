@@ -7,6 +7,7 @@ import br.com.desafio.model.RsPautaAdd;
 import br.com.desafio.service.PautaServiceImpl;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,8 @@ public class PautaControllerImpl implements IpautaController {
 
 	@Autowired
 	PautaServiceImpl service;
+	@Autowired
+	private ModelMapper mapper;
 
 	public ResponseEntity<RsPautaAdd> addPauta(
 			@ApiParam(value = "Pauta Add Request", required = true) @Valid @RequestBody RqPautaAdd rqPautaAdd) {
@@ -37,7 +40,7 @@ public class PautaControllerImpl implements IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
 		List<Pauta> response = service.getPauta(codPauta, rqPautaGet, PageRequest.of(page, size));
-		return new ResponseEntity<List<Pauta>>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
 }
