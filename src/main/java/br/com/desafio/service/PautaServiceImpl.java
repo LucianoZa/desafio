@@ -5,11 +5,13 @@ import br.com.desafio.model.RqPautaAdd;
 import br.com.desafio.model.RqPautaGet;
 import br.com.desafio.model.RsPautaAdd;
 import br.com.desafio.repository.PautaDAOImpl;
+import br.com.desafio.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PautaServiceImpl implements IpautaService{
@@ -23,6 +25,7 @@ public class PautaServiceImpl implements IpautaService{
 
     @Override
     public List<Pauta> getPauta(String codPauta, RqPautaGet rqPautaGet, Pageable pageable) {
-        return dao.getPauta(codPauta, rqPautaGet, pageable);
+        Optional<List<Pauta>> obj = Optional.ofNullable(dao.getPauta(codPauta, rqPautaGet, pageable));
+        return obj.orElseThrow(() ->new ObjectNotFoundException("Pauta não encontrada!"));
     }
 }

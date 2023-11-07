@@ -28,8 +28,7 @@ public class PautaControllerImpl implements IpautaController {
 
 	public ResponseEntity<RsPautaAdd> addPauta(
 			@ApiParam(value = "Pauta Add Request", required = true) @Valid @RequestBody RqPautaAdd rqPautaAdd) {
-		RsPautaAdd response = service.addPauta(rqPautaAdd);
-		return new ResponseEntity<>(response, HttpStatus.CREATED);
+		return new ResponseEntity<>(service.addPauta(rqPautaAdd), HttpStatus.CREATED);
 	}
 
 	public ResponseEntity<List<Pauta>> getPauta(
