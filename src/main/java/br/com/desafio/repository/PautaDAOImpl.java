@@ -59,4 +59,12 @@ public class PautaDAOImpl{
         return rsPautaAdd;
     }
 
+    @Transactional(readOnly = true)
+    public List<Pauta> findAll(Pageable pageable) {
+        return ipautaDAO.findAll(pageable).toList();
+    }
+
+    public Pauta create(Pauta pauta) {
+        return ipautaDAO.save(pauta);
+    }
 }
