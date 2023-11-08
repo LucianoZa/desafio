@@ -1,5 +1,6 @@
 package br.com.desafio.controller.exceptions;
 
+import br.com.desafio.service.exceptions.DataIntegrationViolationException;
 import br.com.desafio.service.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,18 @@ public class ResourceExceptionHandler {
                                             ex.getMessage(),
                                             request.getRequestURI());
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+
+    }
+
+    @ExceptionHandler(DataIntegrationViolationException.class)
+    public ResponseEntity<StandardError>dataIntegrationViolationException(
+            DataIntegrationViolationException ex, HttpServletRequest request){
+        StandardError error = new StandardError(
+                LocalDateTime.now(),
+                HttpStatus.BAD_REQUEST.value(),
+                ex.getMessage(),
+                request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 
     }
 }

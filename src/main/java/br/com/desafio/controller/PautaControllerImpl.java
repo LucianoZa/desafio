@@ -2,9 +2,7 @@ package br.com.desafio.controller;
 
 import br.com.desafio.domain.entity.Pauta;
 import br.com.desafio.model.PautaDTO;
-import br.com.desafio.model.RqPautaAdd;
 import br.com.desafio.model.RqPautaGet;
-import br.com.desafio.model.RsPautaAdd;
 import br.com.desafio.service.PautaServiceImpl;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -30,9 +28,10 @@ public class PautaControllerImpl implements IpautaController {
 	@Autowired
 	private ModelMapper mapper;
 
-	public ResponseEntity<RsPautaAdd> addPauta(
-			@ApiParam(value = "Pauta Add Request", required = true) @Valid @RequestBody RqPautaAdd rqPautaAdd) {
-		return new ResponseEntity<>(service.addPauta(rqPautaAdd), HttpStatus.CREATED);
+	public ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
+		Pauta newPauta = service.create(obj);
+		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{CodPauta}").buildAndExpand(newPauta.getCodPauta()).toString());
+		return ResponseEntity.created(uri).build();
 	}
 
 	public ResponseEntity<List<Pauta>> getPauta(
@@ -53,10 +52,5 @@ public class PautaControllerImpl implements IpautaController {
 		return ResponseEntity.ok().body(listDTO);
 
 	}
-	@PostMapping (value = "/pauta/create")
-	public ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
-		Pauta newPauta = service.create(obj);
-		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{CodPauta}").buildAndExpand(newPauta.getCodPauta()).toString());
-		return ResponseEntity.created(uri).build();
-	}
+
 }

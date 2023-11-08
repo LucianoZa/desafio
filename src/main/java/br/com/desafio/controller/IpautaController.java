@@ -1,9 +1,8 @@
 package br.com.desafio.controller;
 
 import br.com.desafio.domain.entity.Pauta;
-import br.com.desafio.model.RqPautaAdd;
+import br.com.desafio.model.PautaDTO;
 import br.com.desafio.model.RqPautaGet;
-import br.com.desafio.model.RsPautaAdd;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -35,12 +34,11 @@ public interface IpautaController {
 		return getRequest().map(r -> r.getHeader("Accept"));
 	}
 
-	@ApiOperation(value = "Cadastra Pauta", nickname = "addPauta", notes = "Cadastra Pauta", tags = { "Pauta", })
+	@ApiOperation(value = "Cadastra Pauta", nickname = "create", notes = "Cadastra Pauta", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Created") })
 	@RequestMapping(value = "/pauta", consumes = {
 			"application/json" }, method = RequestMethod.POST)
-	default ResponseEntity<RsPautaAdd> addPauta(
-			@ApiParam(value = "PautaAddRequest", required = true) @Valid @RequestBody RqPautaAdd rqPautaAdd) {
+	default ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
 		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
 		} else {
 			log.warn(

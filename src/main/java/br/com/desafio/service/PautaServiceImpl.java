@@ -25,11 +25,6 @@ public class PautaServiceImpl implements IpautaService{
     private ModelMapper mapper;
 
     @Override
-    public RsPautaAdd addPauta(RqPautaAdd rqPautaAdd) {
-        return dao.addPauta(rqPautaAdd);
-    }
-
-    @Override
     public List<Pauta> getPauta(String codPauta, RqPautaGet rqPautaGet, Pageable pageable) {
         Optional<List<Pauta>> obj = Optional.ofNullable(dao.getPauta(codPauta, rqPautaGet, pageable));
         return obj.orElseThrow(() ->new ObjectNotFoundException("Pauta não encontrada!"));

@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="ModelMapper">
+    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="metodo create uso DTO retorno Header\Location">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/exceptions/DataIntegrationViolationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/DesafioApplicationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/exceptions/ResourceExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/exceptions/ResourceExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -68,7 +72,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "Errors"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -85,9 +89,11 @@
       <recent name="br.com.desafio.domain.entity" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="br.com.desafio" />
       <recent name="br.com.desafio.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.desafio.service.exceptions" />
       <recent name="br.com.desafio.model" />
     </key>
   </component>
@@ -97,9 +103,9 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.DesafioApplication">
-    <configuration name="DesafioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.desafio.DesafioApplication" />
+  <component name="RunManager" selected="JUnit.All in desafio">
+    <configuration name="DesafioApplicationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.desafio.DesafioApplicationTest" />
       <module name="desafio" />
       <extension name="coverage">
         <pattern>
@@ -119,28 +125,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PautaControllerImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DesafioApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.desafio.controller.*" />
+          <option name="PATTERN" value="br.com.desafio.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.com.desafio.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.desafio.controller.PautaControllerImplTest" />
+      <option name="PACKAGE_NAME" value="br.com.desafio" />
+      <option name="MAIN_CLASS_NAME" value="br.com.desafio.DesafioApplicationTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DesafioApplicationTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="desafio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.desafio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.desafio" />
+      <option name="MAIN_CLASS_NAME" value="br.com.desafio.DesafioApplicationTest" />
+      <option name="METHOD_NAME" value="main" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in desafio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="desafio" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DesafioApplication" />
-        <item itemvalue="JUnit.PautaControllerImplTest" />
         <item itemvalue="JUnit.All in desafio" />
-        <item itemvalue="JUnit.PautaControllerImplTest" />
-        <item itemvalue="JUnit.All in desafio" />
+        <item itemvalue="JUnit.DesafioApplicationTest" />
+        <item itemvalue="JUnit.DesafioApplicationTest.main" />
+        <item itemvalue="Application.DesafioApplicationTest" />
+        <item itemvalue="JUnit.java in desafio" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699382208725</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="metodo create uso DTO retorno Header\Location">
+      <option name="closed" value="true" />
+      <created>1699392304195</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699392304195</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,21 +246,14 @@
     <MESSAGE value="tratamento de excessão para objeto não encontrado" />
     <MESSAGE value="Configuracao Local e Popula tabela Pauta para testes" />
     <MESSAGE value="ModelMapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="ModelMapper" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="metodo create uso DTO retorno Header\Location" />
+    <option name="LAST_COMMIT_MESSAGE" value="metodo create uso DTO retorno Header\Location" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/desafio$java_in_desafio.ic" NAME="java in desafio Coverage Results" MODIFIED="1699403854612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

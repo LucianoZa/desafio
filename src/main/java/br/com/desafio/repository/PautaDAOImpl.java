@@ -1,9 +1,7 @@
 package br.com.desafio.repository;
 
 import br.com.desafio.domain.entity.Pauta;
-import br.com.desafio.model.RqPautaAdd;
 import br.com.desafio.model.RqPautaGet;
-import br.com.desafio.model.RsPautaAdd;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -44,19 +42,6 @@ public class PautaDAOImpl{
                 response = ipautaDAO.findAll(pageable).toList();
         }
         return response;
-    }
-
-    @Transactional
-    public RsPautaAdd addPauta(RqPautaAdd rqPautaAdd) {
-
-        Pauta pauta = new Pauta(null, rqPautaAdd.getNomPauta(), null, null);
-        pauta = ipautaDAO.save(pauta);
-
-        RsPautaAdd rsPautaAdd = new RsPautaAdd();
-        rsPautaAdd.setCodPauta(pauta.getCodPauta());
-        rsPautaAdd.setNomPauta(pauta.getNomPauta());
-
-        return rsPautaAdd;
     }
 
     @Transactional(readOnly = true)
