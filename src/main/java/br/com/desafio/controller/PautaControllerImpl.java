@@ -40,6 +40,15 @@ public class PautaControllerImpl implements IpautaController {
 		return ResponseEntity.ok().body(mapper.map(service.findById(codPauta), PautaDTO.class));
 	}
 
+	public ResponseEntity<List<PautaDTO>> findAll(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "10") Integer size) {
+		List<Pauta> list = service.findAll(PageRequest.of(page, size));
+		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
+
+	}
+
 	public ResponseEntity<List<PautaDTO>> findByDtIniVotacaoIsNull(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
@@ -63,16 +72,5 @@ public class PautaControllerImpl implements IpautaController {
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
 	}
-
-
-	public ResponseEntity<List<PautaDTO>> findAll(
-			@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "size", defaultValue = "10") Integer size) {
-		List<Pauta> list = service.findAll(PageRequest.of(page, size));
-		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listDTO);
-
-	}
-
 
 }

@@ -1,7 +1,7 @@
 package br.com.desafio.controller.exceptions;
 
-import br.com.desafio.service.exceptions.DataIntegrationViolationException;
 import br.com.desafio.service.exceptions.ObjectNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 
 @ControllerAdvice
-public class ResourceExceptionHandler {
+public class ControllerExceptionHandler {
     @ExceptionHandler(ObjectNotFoundException.class)
     public ResponseEntity<StandardError>objectNotFound(
             ObjectNotFoundException ex, HttpServletRequest request){
@@ -24,9 +24,9 @@ public class ResourceExceptionHandler {
 
     }
 
-    @ExceptionHandler(DataIntegrationViolationException.class)
-    public ResponseEntity<StandardError>dataIntegrationViolationException(
-            DataIntegrationViolationException ex, HttpServletRequest request){
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<StandardError>dataIntegrityViolationException(
+            DataIntegrityViolationException ex, HttpServletRequest request){
         StandardError error = new StandardError(
                 LocalDateTime.now(),
                 HttpStatus.BAD_REQUEST.value(),

@@ -32,6 +32,10 @@ class PautaServiceImplTest {
     public static final LocalDateTime DATEINI           = LocalDateTime.parse("2023-11-08T09:00");
     public static final LocalDateTime DATEFIM           = LocalDateTime.parse("2023-11-08T18:00");
     public static final String OBJETO_NAO_ENCONTRADO    = "Objeto não encontrado!";
+    public static final int INDEX = 0;
+    public static final int PAGE = 0;
+    public static final int SIZE = 1;
+
     @InjectMocks
     private PautaServiceImpl service;
     @Mock
@@ -78,23 +82,23 @@ class PautaServiceImplTest {
     void whenFindAllThenReturnAnListOfPautas() {
         when(dao.findAll(any())).thenReturn(Collections.unmodifiableList(pautaLista));
 
-        List<Pauta>  response = service.findAll(PageRequest.of(0, 1));
+        List<Pauta>  response = service.findAll(PageRequest.of(PAGE, SIZE));
 
         assertNotNull(response);
         assertEquals(1, response.size());
-        assertEquals(Pauta.class, response.get(0).getClass());
+        assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(0).getCodPauta());
-        assertEquals(NAME, response.get(0).getNomPauta());
-        assertEquals(DATEINI, response.get(0).getDtIniVotacao());
-        assertEquals(DATEFIM, response.get(0).getDtFimVotacao());
+        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(NAME, response.get(INDEX).getNomPauta());
+        assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
+        assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
     }
 
     @Test
     void whenFindAllThenReturnAnObjectNotFoundException() {
         when(dao.findAll(any())).thenThrow(new ObjectNotFoundException(OBJETO_NAO_ENCONTRADO));
         try {
-            service.findAll(PageRequest.of(0, 1));
+            service.findAll(PageRequest.of(PAGE, SIZE));
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
@@ -105,23 +109,23 @@ class PautaServiceImplTest {
     void whenFindByDtIniVotacaoIsNullThenReturnAnListOfPautas() {
         when(dao.findByDtIniVotacaoIsNull(any())).thenReturn(Collections.unmodifiableList(pautaLista));
 
-        List<Pauta>  response = service.findByDtIniVotacaoIsNull(PageRequest.of(0, 1));
+        List<Pauta>  response = service.findByDtIniVotacaoIsNull(PageRequest.of(PAGE, SIZE));
 
         assertNotNull(response);
         assertEquals(1, response.size());
-        assertEquals(Pauta.class, response.get(0).getClass());
+        assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(0).getCodPauta());
-        assertEquals(NAME, response.get(0).getNomPauta());
-        assertEquals(DATEINI, response.get(0).getDtIniVotacao());
-        assertEquals(DATEFIM, response.get(0).getDtFimVotacao());
+        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(NAME, response.get(INDEX).getNomPauta());
+        assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
+        assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
     }
 
     @Test
     void whenFindByDtIniVotacaoIsNullThenReturnAnObjectNotFoundException() {
         when(dao.findAll(any())).thenThrow(new ObjectNotFoundException(OBJETO_NAO_ENCONTRADO));
         try {
-            service.findByDtIniVotacaoIsNull(PageRequest.of(0, 1));
+            service.findByDtIniVotacaoIsNull(PageRequest.of(PAGE, SIZE));
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
@@ -132,23 +136,23 @@ class PautaServiceImplTest {
     void whenFindByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNullThenReturnAnListOfPautas() {
         when(dao.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(any())).thenReturn(Collections.unmodifiableList(pautaLista));
 
-        List<Pauta>  response = service.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(PageRequest.of(0, 1));
+        List<Pauta>  response = service.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(PageRequest.of(PAGE, SIZE));
 
         assertNotNull(response);
         assertEquals(1, response.size());
-        assertEquals(Pauta.class, response.get(0).getClass());
+        assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(0).getCodPauta());
-        assertEquals(NAME, response.get(0).getNomPauta());
-        assertEquals(DATEINI, response.get(0).getDtIniVotacao());
-        assertEquals(DATEFIM, response.get(0).getDtFimVotacao());
+        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(NAME, response.get(INDEX).getNomPauta());
+        assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
+        assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
     }
 
     @Test
     void whenFindByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNullThenReturnAnObjectNotFoundException() {
         when(dao.findAll(any())).thenThrow(new ObjectNotFoundException(OBJETO_NAO_ENCONTRADO));
         try {
-            service.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(PageRequest.of(0, 1));
+            service.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(PageRequest.of(PAGE, SIZE));
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
@@ -159,23 +163,23 @@ class PautaServiceImplTest {
     void whenFindByDtFimVotacaoIsNotNullThenReturnAnListOfPautas() {
         when(dao.findByDtFimVotacaoIsNotNull(any())).thenReturn(Collections.unmodifiableList(pautaLista));
 
-        List<Pauta>  response = service.findByDtFimVotacaoIsNotNull(PageRequest.of(0, 1));
+        List<Pauta>  response = service.findByDtFimVotacaoIsNotNull(PageRequest.of(PAGE, SIZE));
 
         assertNotNull(response);
         assertEquals(1, response.size());
-        assertEquals(Pauta.class, response.get(0).getClass());
+        assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(0).getCodPauta());
-        assertEquals(NAME, response.get(0).getNomPauta());
-        assertEquals(DATEINI, response.get(0).getDtIniVotacao());
-        assertEquals(DATEFIM, response.get(0).getDtFimVotacao());
+        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(NAME, response.get(INDEX).getNomPauta());
+        assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
+        assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
     }
 
     @Test
     void whenFindByDtFimVotacaoIsNotNullThenReturnAnObjectNotFoundException() {
         when(dao.findByDtFimVotacaoIsNotNull(any())).thenThrow(new ObjectNotFoundException(OBJETO_NAO_ENCONTRADO));
         try {
-            service.findByDtFimVotacaoIsNotNull(PageRequest.of(0, 1));
+            service.findByDtFimVotacaoIsNotNull(PageRequest.of(PAGE, SIZE));
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
@@ -193,7 +197,6 @@ class PautaServiceImplTest {
         assertEquals(DATEINI, response.getDtIniVotacao());
         assertEquals(DATEFIM, response.getDtFimVotacao());
     }
-
 
     private void startPauta() {
         pauta = new Pauta(ID, NAME, DATEINI, DATEFIM);
