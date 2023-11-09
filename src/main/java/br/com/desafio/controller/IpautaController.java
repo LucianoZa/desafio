@@ -1,8 +1,6 @@
 package br.com.desafio.controller;
 
-import br.com.desafio.domain.entity.Pauta;
 import br.com.desafio.model.PautaDTO;
-import br.com.desafio.model.RqPautaGet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -47,14 +45,28 @@ public interface IpautaController {
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consulta Pauta", nickname = "getPauta", notes = "Consulta Pauta", tags = { "Pauta", })
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = Pauta.class, responseContainer = "List"),
-							@ApiResponse(code = 404, message = "Not Found") })
-	@RequestMapping(value = "/pauta/{codPauta}", produces = {
+	@ApiOperation(value = "Consulta Pauta por ID", nickname = "findByID", notes = "Consulta Pauta por ID", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class),
+			@ApiResponse(code = 404, message = "Not Found") })
+	@RequestMapping(value = "/pauta/findById/{codPauta}", produces = {
 			"application/json" }, method = RequestMethod.GET)
-	default ResponseEntity<List<Pauta>> getPauta(
-			@ApiParam(value = "CodPauta", required = true) @Valid @PathVariable String codPauta,
-			@ApiParam(value = "PautaRequest", required = true) @Valid @RequestBody RqPautaGet rqPautaGet,
+	default ResponseEntity<PautaDTO> findById(
+			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta)
+	{
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
+
+	@ApiOperation(value = "Consulta Pauta não Iniciada", nickname = "findByDtIniVotacaoIsNull", notes = "Consulta Pauta não Iniciada", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
+			@ApiResponse(code = 404, message = "Not Found") })
+	@RequestMapping(value = "/pauta/findByDtIniVotacaoIsNull", produces = {
+			"application/json" }, method = RequestMethod.GET)
+	default ResponseEntity<List<PautaDTO>> findByDtIniVotacaoIsNull(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
@@ -65,5 +77,57 @@ public interface IpautaController {
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
+
+	@ApiOperation(value = "Consulta Pauta em Andamento", nickname = "findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull", notes = "Consulta Pauta em Andamento", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
+			@ApiResponse(code = 404, message = "Not Found") })
+	@RequestMapping(value = "/pauta/findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull", produces = {
+			"application/json" }, method = RequestMethod.GET)
+	default ResponseEntity<List<PautaDTO>> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "10") Integer size)
+	{
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
+
+	@ApiOperation(value = "Consulta Pauta Finalizada", nickname = "findByDtFimVotacaoIsNotNull", notes = "Consulta Pauta Finalizada", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
+			@ApiResponse(code = 404, message = "Not Found") })
+	@RequestMapping(value = "/pauta/findByDtFimVotacaoIsNotNull", produces = {
+			"application/json" }, method = RequestMethod.GET)
+	default ResponseEntity<List<PautaDTO>> findByDtFimVotacaoIsNotNull(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "10") Integer size)
+	{
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
+
+	@ApiOperation(value = "Consulta Todas as Pautas", nickname = "findByDtFimVotacaoIsNotNull", notes = "Consulta Todas as Pautas", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
+			@ApiResponse(code = 404, message = "Not Found") })
+	@RequestMapping(value = "/pauta/findAll", produces = {
+			"application/json" }, method = RequestMethod.GET)
+	default ResponseEntity<List<PautaDTO>> findAll(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "size", defaultValue = "10") Integer size)
+	{
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
+
 
 }

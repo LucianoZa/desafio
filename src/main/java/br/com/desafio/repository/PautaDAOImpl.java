@@ -1,7 +1,6 @@
 package br.com.desafio.repository;
 
 import br.com.desafio.domain.entity.Pauta;
-import br.com.desafio.model.RqPautaGet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -24,32 +22,24 @@ public class PautaDAOImpl{
     @Autowired
     private IpautaDAO ipautaDAO;
 
-    @Transactional(readOnly = true)
-    public List<Pauta> getPauta(String codPauta, RqPautaGet rqPautaGet, Pageable pageable){
+    @Transactional()
+    public Pauta create(Pauta pauta) { return ipautaDAO.save(pauta); }
 
-        List<Pauta> response = new ArrayList<>();
-        switch(rqPautaGet.getStatusPauta()) {
-            case "N": //Sessão de votação não iniciada
-                response = ipautaDAO.findByDtIniVotacaoIsNull(pageable);
-                break;
-            case "A": //Sessão de votação iniciada, mas não finalizada
-                response = ipautaDAO.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(pageable);
-                break;
-            case "F": //Sessão de votação finalizada
-                response = ipautaDAO.findByDtFimVotacaoIsNotNull(pageable); //
-                break;
-            default: //Todas as Pautas cadastradas
-                response = ipautaDAO.findAll(pageable).toList();
-        }
-        return response;
-    }
+    @Transactional(readOnly = true)
+    public Pauta findById(Long codPauta) { return ipautaDAO.findById(codPauta).get();}
+
+    @Transactional(readOnly = true)
+    public List<Pauta> findByDtIniVotacaoIsNull(Pageable pageable) { return ipautaDAO.findByDtIniVotacaoIsNull(pageable); }
+
+    @Transactional(readOnly = true)
+    public List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(Pageable pageable) { return ipautaDAO.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(pageable); }
+
+    @Transactional(readOnly = true)
+    public List<Pauta> findByDtFimVotacaoIsNotNull(Pageable pageable) { return ipautaDAO.findByDtFimVotacaoIsNotNull(pageable); }
 
     @Transactional(readOnly = true)
     public List<Pauta> findAll(Pageable pageable) {
         return ipautaDAO.findAll(pageable).toList();
     }
 
-    public Pauta create(Pauta pauta) {
-        return ipautaDAO.save(pauta);
-    }
 }

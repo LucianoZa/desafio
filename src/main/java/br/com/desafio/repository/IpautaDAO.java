@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface IpautaDAO extends JpaRepository<Pauta, Long> {
-    List<Pauta> findByDtFimVotacaoIsNotNull(Pageable pageable);
-    List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(Pageable pageable);
     List<Pauta> findByDtIniVotacaoIsNull(Pageable pageable);
-
+    List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(Pageable pageable);
+    List<Pauta> findByDtFimVotacaoIsNotNull(Pageable pageable);
 }
