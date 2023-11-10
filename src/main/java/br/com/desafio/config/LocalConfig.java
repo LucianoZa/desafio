@@ -1,7 +1,5 @@
 package br.com.desafio.config;
 
-import br.com.desafio.repository.PautaDAOImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -10,8 +8,8 @@ import org.springframework.context.annotation.Profile;
 @Profile("local")
 public class LocalConfig {
 
-    @Autowired
-    private PautaDAOImpl pautaDAO;
+//    @Autowired
+//    private PautaDAOImpl pautaDAO;
     @Bean
     public void starDB() {
 //        RqPautaAdd pauta1 = new RqPautaAdd("Pauta p1");

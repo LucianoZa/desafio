@@ -61,7 +61,7 @@ class PautaServiceImplTest {
 
         assertNotNull(response);
         assertEquals(Pauta.class, response.getClass());
-        assertEquals(ID, response.getCodPauta());
+        assertEquals(ID, response.getId());
         assertEquals(NAME, response.getNomPauta());
         assertEquals(DATEINI, response.getDtIniVotacao());
         assertEquals(DATEFIM, response.getDtFimVotacao());
@@ -75,7 +75,7 @@ class PautaServiceImplTest {
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
-        };
+        }
     }
 
     @Test
@@ -88,7 +88,7 @@ class PautaServiceImplTest {
         assertEquals(1, response.size());
         assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(ID, response.get(INDEX).getId());
         assertEquals(NAME, response.get(INDEX).getNomPauta());
         assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
         assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
@@ -102,7 +102,7 @@ class PautaServiceImplTest {
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
-        };
+        }
     }
 
     @Test
@@ -115,7 +115,7 @@ class PautaServiceImplTest {
         assertEquals(1, response.size());
         assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(ID, response.get(INDEX).getId());
         assertEquals(NAME, response.get(INDEX).getNomPauta());
         assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
         assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
@@ -129,7 +129,7 @@ class PautaServiceImplTest {
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
-        };
+        }
     }
 
     @Test
@@ -142,7 +142,7 @@ class PautaServiceImplTest {
         assertEquals(1, response.size());
         assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(ID, response.get(INDEX).getId());
         assertEquals(NAME, response.get(INDEX).getNomPauta());
         assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
         assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
@@ -156,7 +156,7 @@ class PautaServiceImplTest {
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
-        };
+        }
     }
 
     @Test
@@ -169,7 +169,7 @@ class PautaServiceImplTest {
         assertEquals(1, response.size());
         assertEquals(Pauta.class, response.get(INDEX).getClass());
 
-        assertEquals(ID, response.get(INDEX).getCodPauta());
+        assertEquals(ID, response.get(INDEX).getId());
         assertEquals(NAME, response.get(INDEX).getNomPauta());
         assertEquals(DATEINI, response.get(INDEX).getDtIniVotacao());
         assertEquals(DATEFIM, response.get(INDEX).getDtFimVotacao());
@@ -183,7 +183,7 @@ class PautaServiceImplTest {
         } catch (Exception ex) {
             assertEquals(ObjectNotFoundException.class, ex.getClass());
             assertEquals(OBJETO_NAO_ENCONTRADO, ex.getMessage());
-        };
+        }
     }
 
     @Test
@@ -192,7 +192,7 @@ class PautaServiceImplTest {
         Pauta response = dao.create(pauta);
         assertNotNull(response);
         assertEquals(Pauta.class, response.getClass());
-        assertEquals(ID, response.getCodPauta());
+        assertEquals(ID, response.getId());
         assertEquals(NAME, response.getNomPauta());
         assertEquals(DATEINI, response.getDtIniVotacao());
         assertEquals(DATEFIM, response.getDtFimVotacao());

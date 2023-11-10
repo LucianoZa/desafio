@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class PautaDAOImpl{
@@ -25,8 +26,17 @@ public class PautaDAOImpl{
     @Transactional()
     public Pauta create(Pauta pauta) { return ipautaDAO.save(pauta); }
 
+    @Transactional()
+    public Pauta update(Pauta pauta) { return ipautaDAO.save(pauta); }
+
+    @Transactional()
+    public void deleteById(Long id) { ipautaDAO.deleteById(id);}
+
     @Transactional(readOnly = true)
-    public Pauta findById(Long codPauta) { return ipautaDAO.findById(codPauta).get();}
+    public Optional<Pauta> findByNomPauta(String nomPauta) { return ipautaDAO.findByNomPauta(nomPauta);}
+
+    @Transactional(readOnly = true)
+    public Optional<Pauta>  findById(Long id) { return ipautaDAO.findById(id);}
 
     @Transactional(readOnly = true)
     public List<Pauta> findByDtIniVotacaoIsNull(Pageable pageable) { return ipautaDAO.findByDtIniVotacaoIsNull(pageable); }

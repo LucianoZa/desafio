@@ -31,13 +31,29 @@ public class PautaControllerImpl implements IpautaController {
 
 	public ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
 		Pauta newPauta = service.create(obj);
-		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{CodPauta}").buildAndExpand(newPauta.getCodPauta()).toString());
+		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newPauta.getId()).toString());
 		return ResponseEntity.created(uri).build();
 	}
 
+	public ResponseEntity<PautaDTO> delete(@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+
+	public ResponseEntity<PautaDTO> update(
+			@RequestBody PautaDTO obj,
+			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id){
+			obj.setId(id);
+			if (obj.getDtFimVotacao() == null) {
+				obj.setDtFimVotacao(obj.getDtIniVotacao().plusMinutes(1));
+			}
+			Pauta newObj = service.update(obj);
+		return ResponseEntity.ok().body(mapper.map(newObj, PautaDTO.class));
+	}
+
 	public ResponseEntity<PautaDTO> findById(
-			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
-		return ResponseEntity.ok().body(mapper.map(service.findById(codPauta), PautaDTO.class));
+			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
+		return ResponseEntity.ok().body(mapper.map(service.findById(id), PautaDTO.class));
 	}
 
 	public ResponseEntity<List<PautaDTO>> findAll(

@@ -17,11 +17,11 @@ public class Pauta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_pauta")
-    private Long codPauta;
+    private Long id;
 
     @Size(max = 200)
     @NotNull
-    @Column(name = "nom_pauta")
+    @Column(name = "nom_pauta", unique = true)
     private String nomPauta;
 
     @Column(name = "dt_ini_votacao", columnDefinition = "TIMESTAMP")

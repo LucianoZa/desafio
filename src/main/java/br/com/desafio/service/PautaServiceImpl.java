@@ -3,6 +3,7 @@ package br.com.desafio.service;
 import br.com.desafio.domain.entity.Pauta;
 import br.com.desafio.model.PautaDTO;
 import br.com.desafio.repository.PautaDAOImpl;
+import br.com.desafio.service.exceptions.DataIntegrityViolationException;
 import br.com.desafio.service.exceptions.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,30 +23,54 @@ public class PautaServiceImpl implements IpautaService{
     @Autowired
     private ModelMapper mapper;
 
+    @Override
     public Pauta create(PautaDTO obj) {
+        findByNomPauta(obj);
         return dao.create(mapper.map(obj, Pauta.class));
     }
 
-    public Pauta findById(Long codPauta) {
-        Optional<Pauta> obj = Optional.ofNullable(dao.findById(codPauta));
+    @Override
+    public Pauta update(PautaDTO obj) {
+        return dao.update(mapper.map(obj, Pauta.class));
+    }
+
+    @Override
+    public void delete(Long id) {
+        dao.deleteById(id);
+    }
+
+    @Override
+    public void findByNomPauta(PautaDTO obj) {
+        Optional<Pauta> pauta = dao.findByNomPauta(obj.getNomPauta());
+        if (pauta.isPresent()) {
+            throw new DataIntegrityViolationException("Pauta já Cadastrada");
+        }
+    }
+
+    @Override
+    public Pauta findById(Long id) {
+        Optional<Pauta> obj = dao.findById(id);
         return obj.orElseThrow(() ->new ObjectNotFoundException(PAUTA_NAO_ENCONTRADA));
     }
 
+    @Override
     public List<Pauta> findByDtIniVotacaoIsNull(Pageable pageable) {
         Optional<List<Pauta>> obj = Optional.ofNullable(dao.findByDtIniVotacaoIsNull(pageable));
         return obj.orElseThrow(() ->new ObjectNotFoundException(PAUTA_NAO_ENCONTRADA));
     }
 
+    @Override
     public List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(Pageable pageable) {
         Optional<List<Pauta>> obj = Optional.ofNullable(dao.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(pageable));
         return obj.orElseThrow(() ->new ObjectNotFoundException(PAUTA_NAO_ENCONTRADA));
     }
-
+    @Override
     public List<Pauta> findByDtFimVotacaoIsNotNull(Pageable pageable) {
         Optional<List<Pauta>> obj = Optional.ofNullable(dao.findByDtFimVotacaoIsNotNull(pageable));
         return obj.orElseThrow(() ->new ObjectNotFoundException(PAUTA_NAO_ENCONTRADA));
     }
 
+    @Override
     public List<Pauta> findAll(Pageable pageable) {
         Optional<List<Pauta>> obj = Optional.ofNullable(dao.findAll(pageable));
         return obj.orElseThrow(() ->new ObjectNotFoundException(PAUTA_NAO_ENCONTRADA));

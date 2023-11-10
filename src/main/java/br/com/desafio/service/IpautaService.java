@@ -9,7 +9,10 @@ import java.util.List;
 public interface IpautaService {
 
      Pauta create(PautaDTO obj);
-     Pauta findById(Long codPauta);
+     Pauta update(PautaDTO obj);
+     void delete(Long id);
+     void findByNomPauta(PautaDTO obj);
+     Pauta findById(Long id);
      List<Pauta> findByDtIniVotacaoIsNull( Pageable pageable);
      List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull( Pageable pageable);
      List<Pauta> findByDtFimVotacaoIsNotNull( Pageable pageable);

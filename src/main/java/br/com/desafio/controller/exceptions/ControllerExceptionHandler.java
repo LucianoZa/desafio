@@ -12,18 +12,6 @@ import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class ControllerExceptionHandler {
-    @ExceptionHandler(ObjectNotFoundException.class)
-    public ResponseEntity<StandardError>objectNotFound(
-            ObjectNotFoundException ex, HttpServletRequest request){
-                StandardError error = new StandardError(
-                                            LocalDateTime.now(),
-                                            HttpStatus.NOT_FOUND.value(),
-                                            ex.getMessage(),
-                                            request.getRequestURI());
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
-
-    }
-
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<StandardError>dataIntegrityViolationException(
             DataIntegrityViolationException ex, HttpServletRequest request){
@@ -33,6 +21,17 @@ public class ControllerExceptionHandler {
                 ex.getMessage(),
                 request.getRequestURI());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(ObjectNotFoundException.class)
+    public ResponseEntity<StandardError>objectNotFound(
+            ObjectNotFoundException ex, HttpServletRequest request) {
+        StandardError error = new StandardError(
+                LocalDateTime.now(),
+                HttpStatus.NOT_FOUND.value(),
+                ex.getMessage(),
+                request.getRequestURI());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 
     }
 }
