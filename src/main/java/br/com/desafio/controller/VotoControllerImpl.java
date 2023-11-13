@@ -46,15 +46,13 @@ public class VotoControllerImpl implements IvotoController {
 		List<Voto> list = service.findByCodPauta(codPauta, PageRequest.of(page, size));
 		List<VotoDTO> listDTO = list.stream().map(x -> mapper.map(x, VotoDTO.class)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
-
 	}
 
 	public ResponseEntity<ApuracaoDTO> apuracao(
 			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
-		//ApuracaoDTO apuracao = service.apuracao(codPauta);
-		ApuracaoDTO apuracao = new ApuracaoDTO();
+		ApuracaoDTO apuracao = service.apuracao(codPauta);
+		//ApuracaoDTO apuracao = new ApuracaoDTO();
 		return ResponseEntity.ok().body(apuracao);
-
 	}
 
 }

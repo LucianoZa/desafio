@@ -1,6 +1,7 @@
 package br.com.desafio.service;
 
 import br.com.desafio.domain.entity.Voto;
+import br.com.desafio.model.ApuracaoDTO;
 import br.com.desafio.model.VotoDTO;
 import org.springframework.data.domain.Pageable;
 
@@ -10,5 +11,5 @@ public interface IvotoService {
 
      Voto create(VotoDTO obj);
      List<Voto> findByCodPauta(Long codPauta, Pageable pageable);
-     //ApuracaoDTO apuracao(Long codPauta);
+     ApuracaoDTO apuracao(Long codPauta);
 }

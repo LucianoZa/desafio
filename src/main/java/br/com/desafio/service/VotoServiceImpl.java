@@ -1,6 +1,7 @@
 package br.com.desafio.service;
 
 import br.com.desafio.domain.entity.Voto;
+import br.com.desafio.model.ApuracaoDTO;
 import br.com.desafio.model.VotoDTO;
 import br.com.desafio.repository.VotoDAOImpl;
 import br.com.desafio.service.exceptions.DataIntegrityViolationException;
@@ -43,8 +44,10 @@ public class VotoServiceImpl implements IvotoService{
         return obj.orElseThrow(() ->new ObjectNotFoundException(VOTO_NAO_ENCONTRADO));
     }
 
-//    public ApuracaoDTO apuracao(Long codPauta) {
-//        return dao.apuracao(codPauta);
-//    }
+    public ApuracaoDTO apuracao(Long codPauta) {
+        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
+//        return apuracaoDTO;
+        return dao.apuracao(codPauta);
+    }
 
 }

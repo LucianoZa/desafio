@@ -1,6 +1,7 @@
 package br.com.desafio.repository;
 
 import br.com.desafio.domain.entity.Voto;
+import br.com.desafio.model.ApuracaoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -42,8 +43,9 @@ public class VotoDAOImpl {
 //        //"(SELECT COUNT(voto)  FROM voto WHERE cod_pauta = :codPauta AND voto = 'S') , " +
 //        "COUNT(voto) FROM voto WHERE cod_pauta = :codPauta ")
 //@Param("codPauta")
-//    public ApuracaoDTO apuracao(Long codPauta) {
-//        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
-//        return apuracaoDTO; //ivotoDAO.apuracao(codPauta);
-//    };
+    @Transactional(readOnly = true)
+    public ApuracaoDTO apuracao(Long codPauta) {
+        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
+        return apuracaoDTO; //ivotoDAO.apuracao(codPauta);
+    };
 }
