@@ -74,7 +74,7 @@ class PautaControllerImplTest {
         assertEquals(ResponseEntity.class, response.getClass());
         assertEquals(PautaDTO.class, response.getBody().getClass());
 
-        assertEquals(ID, response.getBody().getCodPauta());
+        assertEquals(ID, response.getBody().getId());
         assertEquals(NAME, response.getBody().getNomPauta());
         assertEquals(DATEINI, response.getBody().getDtIniVotacao());
         assertEquals(DATEFIM, response.getBody().getDtFimVotacao());
@@ -96,7 +96,7 @@ class PautaControllerImplTest {
         assertEquals(PautaDTO.class, response.getBody().get(INDEX).getClass());
         assertEquals(1, response.getBody().size());
 
-        assertEquals(ID, response.getBody().get(INDEX).getCodPauta());
+        assertEquals(ID, response.getBody().get(INDEX).getId());
         assertEquals(NAME, response.getBody().get(INDEX).getNomPauta());
         assertEquals(DATEINI, response.getBody().get(INDEX).getDtIniVotacao());
         assertEquals(DATEFIM, response.getBody().get(INDEX).getDtFimVotacao());

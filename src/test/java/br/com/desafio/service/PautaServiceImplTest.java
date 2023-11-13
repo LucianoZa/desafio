@@ -50,13 +50,13 @@ class PautaServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
         startPauta();
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
     void whenFindByIdThenReturnAnObjectInstance() {
-        when(dao.findById(anyLong())).thenReturn(pauta);
+        when(dao.findById(anyLong())).thenReturn(Optional.ofNullable(pauta));
         Pauta response = service.findById(ID);
 
         assertNotNull(response);

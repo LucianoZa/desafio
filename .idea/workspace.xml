@@ -5,22 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Testes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IvotoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/VotoControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/ApuracaoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/VotoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IvotoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/VotoDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IvotoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/VotoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/config/LocalConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/config/LocalConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/exceptions/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/exceptions/ControllerExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/PautaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/PautaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RqPautaAdd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RqPautaGet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/RsPautaAdd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IpautaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IpautaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/exceptions/ObjectNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/exceptions/ObjectNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/desafio/service/PautaServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/service/PautaServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,8 +103,11 @@
       <recent name="br.com.desafio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="br.com.desafio.service.exceptions" />
       <recent name="br.com.desafio.model" />
+      <recent name="br.com.desafio.repository" />
+      <recent name="br.com.desafio.service" />
+      <recent name="br.com.desafio.controller" />
+      <recent name="br.com.desafio.service.exceptions" />
     </key>
   </component>
   <component name="RunAnythingCache">
