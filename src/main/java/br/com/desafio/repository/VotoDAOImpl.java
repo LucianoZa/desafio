@@ -4,7 +4,6 @@ import br.com.desafio.domain.entity.Voto;
 import br.com.desafio.model.ApuracaoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +13,6 @@ import java.util.Optional;
 
 @Repository
 public class VotoDAOImpl {
-
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private EntityManager entityManager;
@@ -35,17 +31,23 @@ public class VotoDAOImpl {
         return ivotoDAO.findByCodPauta(codPauta, pageable);
     }
 
+    public ApuracaoDTO GetApuracao(Long codPauta) {
+        return ivotoDAO.GetApuracao(codPauta);
+    }
+
 //    @Transactional(readOnly = true)
 //    public ApuracaoDTO apuracao(Long codPauta) {
 //        return ivotoDAO.apuracao(codPauta);
 //    }
+
 //@Query(value = " SELECT cod_pauta, " +
 //        //"(SELECT COUNT(voto)  FROM voto WHERE cod_pauta = :codPauta AND voto = 'S') , " +
 //        "COUNT(voto) FROM voto WHERE cod_pauta = :codPauta ")
 //@Param("codPauta")
-    @Transactional(readOnly = true)
-    public ApuracaoDTO apuracao(Long codPauta) {
-        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
-        return apuracaoDTO; //ivotoDAO.apuracao(codPauta);
-    };
+
+//    @Transactional(readOnly = true)
+//    public ApuracaoDTO apuracao(Long codPauta) {
+//        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
+//        return apuracaoDTO; //ivotoDAO.apuracao(codPauta);
+//    };
 }

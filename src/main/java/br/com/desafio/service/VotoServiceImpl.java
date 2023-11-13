@@ -45,9 +45,9 @@ public class VotoServiceImpl implements IvotoService{
     }
 
     public ApuracaoDTO apuracao(Long codPauta) {
-        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
-//        return apuracaoDTO;
-        return dao.apuracao(codPauta);
+        //ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
+        //return apuracaoDTO;
+        return dao.GetApuracao(codPauta);
     }
 
 }
