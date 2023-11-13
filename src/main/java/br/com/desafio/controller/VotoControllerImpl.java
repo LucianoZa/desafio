@@ -1,6 +1,7 @@
 package br.com.desafio.controller;
 
 import br.com.desafio.domain.entity.Voto;
+import br.com.desafio.model.ApuracaoDTO;
 import br.com.desafio.model.VotoDTO;
 import br.com.desafio.service.VotoServiceImpl;
 import io.swagger.annotations.ApiParam;
@@ -48,11 +49,12 @@ public class VotoControllerImpl implements IvotoController {
 
 	}
 
-//	public ResponseEntity<ApuracaoDTO> apuracao(
-//			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
-//		ApuracaoDTO apuracao = service.apuracao(codPauta);
-//		return ResponseEntity.ok().body(apuracao);
-//
-//	}
+	public ResponseEntity<ApuracaoDTO> apuracao(
+			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
+		//ApuracaoDTO apuracao = service.apuracao(codPauta);
+		ApuracaoDTO apuracao = new ApuracaoDTO();
+		return ResponseEntity.ok().body(apuracao);
+
+	}
 
 }

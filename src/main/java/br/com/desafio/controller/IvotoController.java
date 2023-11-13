@@ -1,5 +1,6 @@
 package br.com.desafio.controller;
 
+import br.com.desafio.model.ApuracaoDTO;
 import br.com.desafio.model.VotoDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -63,19 +64,19 @@ public interface IvotoController {
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-//	@ApiOperation(value = "Consultar Apuração da sessão", nickname = "apuracao", notes = "Consulta resultado final de uma votação", tags = { "Votação", })
-//	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = ApuracaoDTO.class, responseContainer = "List"),
-//			@ApiResponse(code = 404, message = "Not Found") })
-//	@RequestMapping(value = "/apuracao", produces = {
-//			"application/json" }, method = RequestMethod.GET)
-//	default ResponseEntity<ApuracaoDTO> apuracao(
-//			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta)
-//	{
-//		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-//		} else {
-//			log.warn(
-//					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-//		}
-//		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-//	}
+	@ApiOperation(value = "Consultar Apuração da sessão", nickname = "apuracao", notes = "Consulta resultado final de uma votação", tags = { "Votação", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = ApuracaoDTO.class, responseContainer = "List"),
+			@ApiResponse(code = 404, message = "Not Found") })
+	@RequestMapping(value = "/apuracao", produces = {
+			"application/json" }, method = RequestMethod.GET)
+	default ResponseEntity<ApuracaoDTO> apuracao(
+			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta)
+	{
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
 }

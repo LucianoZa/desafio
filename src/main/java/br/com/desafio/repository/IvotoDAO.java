@@ -18,6 +18,6 @@ public interface IvotoDAO extends JpaRepository<Voto, Long> {
 //    @Query(value = " SELECT cod_pauta, 2, " +
 //        //"(SELECT COUNT(voto)  FROM voto WHERE cod_pauta = :codPauta AND voto = 'S') , " +
 //        "COUNT(voto) FROM voto Limit 1, nativeQuery = true ") //WHERE cod_pauta = :codPauta ")
-//    ApuracaoDTO apuracao(Long codPauta);
+    //ApuracaoDTO apuracao(Long codPauta);
 
 }

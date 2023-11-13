@@ -17,11 +17,12 @@ import java.util.Optional;
 public class VotoServiceImpl implements IvotoService{
 
     public static final String VOTO_NAO_ENCONTRADO = "Votação não encontrada";
-    @Autowired
-    private VotoDAOImpl dao;
 
     @Autowired
     private ModelMapper mapper;
+
+    @Autowired
+    VotoDAOImpl dao;
 
     @Override
     public Voto create(VotoDTO obj) {
@@ -42,7 +43,6 @@ public class VotoServiceImpl implements IvotoService{
         return obj.orElseThrow(() ->new ObjectNotFoundException(VOTO_NAO_ENCONTRADO));
     }
 
-//    @Override
 //    public ApuracaoDTO apuracao(Long codPauta) {
 //        return dao.apuracao(codPauta);
 //    }
