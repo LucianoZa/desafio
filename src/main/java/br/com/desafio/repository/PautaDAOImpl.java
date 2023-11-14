@@ -4,7 +4,6 @@ import br.com.desafio.domain.entity.Pauta;
 import br.com.desafio.model.SessaoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +13,6 @@ import java.util.Optional;
 
 @Repository
 public class PautaDAOImpl{
-
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private EntityManager entityManager;

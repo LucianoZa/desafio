@@ -23,7 +23,7 @@ public class PautaServiceImpl implements IpautaService{
     @Autowired
     private ModelMapper mapper;
 
-    @Override
+
     public Pauta create(PautaDTO obj) {
         findByNomPauta(obj);
         return dao.create(mapper.map(obj, Pauta.class));

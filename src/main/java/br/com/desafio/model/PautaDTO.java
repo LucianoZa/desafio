@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PautaDTO {
 
-    @JsonProperty("id")
+    @JsonProperty("codPauta")
     private Long id;
 
     @JsonProperty("nomPauta")

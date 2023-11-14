@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class Pauta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "projectid_sequence")
     @Column(name = "cod_pauta")
     private Long id;
 

@@ -45,13 +45,43 @@ public interface IpautaController {
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
+	@ApiOperation(value = "Abrir Sessão", nickname = "create", notes = "Abrir uma Sessão de Votação", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Updated", response = PautaDTO.class),
+			@ApiResponse(code = 404, message = "Not Found")})
+	@RequestMapping(value = "/{id}",
+			consumes = { "application/json" },
+			produces = { "application/json" }, method = RequestMethod.PUT)
+	default ResponseEntity<PautaDTO> update(
+			@RequestBody PautaDTO obj,
+			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+	}
+	@ApiOperation(value = "Apagar Pauta", nickname = "delete", notes = "Excluir uma Pauta de votação", tags = { "Pauta", })
+	@ApiResponses(value = { @ApiResponse(code = 204, message = "No Content") })
+	@RequestMapping(value = "/{id}", consumes = {
+			"application/json" }, method = RequestMethod.DELETE)
+	default ResponseEntity<PautaDTO> delete(@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
+		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
+		} else {
+			log.warn(
+					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
+		}
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
+
 	@ApiOperation(value = "Consulta Pauta por ID", nickname = "findByID", notes = "Consulta Pauta por ID", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class),
 			@ApiResponse(code = 404, message = "Not Found") })
-	@RequestMapping(value = "/findById/{codPauta}", produces = {
+	@RequestMapping(value = "/findById/{id}", produces = {
 			"application/json" }, method = RequestMethod.GET)
 	default ResponseEntity<PautaDTO> findById(
-			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta)
+			@ApiParam(value = "id", required = true) @Valid @PathVariable Long codPauta)
 	{
 		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
 		} else {
