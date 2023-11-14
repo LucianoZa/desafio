@@ -13,13 +13,13 @@ import java.math.BigInteger;
 @AllArgsConstructor
 public class ApuracaoDTO {
 
-    @JsonProperty("codPauta")
-    private Long codPauta;
-
-    @JsonProperty("votosTotal")
-    private BigInteger votosTotal;
+    @JsonProperty("cod_Pauta")
+    private BigInteger cod_Pauta;
 
     @JsonProperty("votosTotalSim")
     private BigInteger votosTotalSim;
+
+    @JsonProperty("votosTotal")
+    private BigInteger votosTotal;
 
 }

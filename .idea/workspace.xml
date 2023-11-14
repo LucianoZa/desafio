@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Apuração">
+    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Apuração @query">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/CodigoPautaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/ICodigoPautaDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IvotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IvotoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/VotoControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/VotoControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/ApuracaoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/ApuracaoDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IvotoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/IvotoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/VotoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/VotoDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IvotoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/IvotoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/VotoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/VotoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -77,6 +83,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.desafio.model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\_f\desafio\src\main\resources" />
       <recent name="C:\_f\desafio\src\test\Resources" />
@@ -267,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699896530462</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Apuração @query">
+      <option name="closed" value="true" />
+      <created>1699901939365</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699901939365</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,15 +321,12 @@
     <MESSAGE value="Testes Service" />
     <MESSAGE value="Testes Application" />
     <MESSAGE value="Apuração" />
-    <option name="LAST_COMMIT_MESSAGE" value="Apuração" />
+    <MESSAGE value="Apuração @query" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apuração @query" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/br/com/desafio/service/PautaServiceImplTest.java</url>
           <line>204</line>
@@ -320,8 +334,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/desafio/service/VotoServiceImpl.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="7" />
+          <line>47</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

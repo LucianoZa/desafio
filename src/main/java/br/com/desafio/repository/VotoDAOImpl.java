@@ -31,23 +31,8 @@ public class VotoDAOImpl {
         return ivotoDAO.findByCodPauta(codPauta, pageable);
     }
 
-    public ApuracaoDTO GetApuracao(Long codPauta) {
+    public List<ApuracaoDTO> GetApuracao(Long codPauta) {
         return ivotoDAO.GetApuracao(codPauta);
     }
 
-//    @Transactional(readOnly = true)
-//    public ApuracaoDTO apuracao(Long codPauta) {
-//        return ivotoDAO.apuracao(codPauta);
-//    }
-
-//@Query(value = " SELECT cod_pauta, " +
-//        //"(SELECT COUNT(voto)  FROM voto WHERE cod_pauta = :codPauta AND voto = 'S') , " +
-//        "COUNT(voto) FROM voto WHERE cod_pauta = :codPauta ")
-//@Param("codPauta")
-
-//    @Transactional(readOnly = true)
-//    public ApuracaoDTO apuracao(Long codPauta) {
-//        ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
-//        return apuracaoDTO; //ivotoDAO.apuracao(codPauta);
-//    };
 }

@@ -44,9 +44,7 @@ public class VotoServiceImpl implements IvotoService{
         return obj.orElseThrow(() ->new ObjectNotFoundException(VOTO_NAO_ENCONTRADO));
     }
 
-    public ApuracaoDTO apuracao(Long codPauta) {
-        //ApuracaoDTO apuracaoDTO = new ApuracaoDTO();
-        //return apuracaoDTO;
+    public List<ApuracaoDTO> apuracao(Long codPauta) {
         return dao.GetApuracao(codPauta);
     }
 

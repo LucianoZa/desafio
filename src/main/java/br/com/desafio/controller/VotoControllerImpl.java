@@ -48,10 +48,9 @@ public class VotoControllerImpl implements IvotoController {
 		return ResponseEntity.ok().body(listDTO);
 	}
 
-	public ResponseEntity<ApuracaoDTO> apuracao(
+	public ResponseEntity<List<ApuracaoDTO>> apuracao(
 			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
-		ApuracaoDTO apuracao = service.apuracao(codPauta);
-		//ApuracaoDTO apuracao = new ApuracaoDTO();
+		List<ApuracaoDTO> apuracao = service.apuracao(codPauta);
 		return ResponseEntity.ok().body(apuracao);
 	}
 

@@ -11,5 +11,5 @@ public interface IvotoService {
 
      Voto create(VotoDTO obj);
      List<Voto> findByCodPauta(Long codPauta, Pageable pageable);
-     ApuracaoDTO apuracao(Long codPauta);
+     List<ApuracaoDTO> apuracao(Long codPauta);
 }

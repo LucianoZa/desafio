@@ -69,7 +69,7 @@ public interface IvotoController {
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/apuracao", produces = {
 			"application/json" }, method = RequestMethod.GET)
-	default ResponseEntity<ApuracaoDTO> apuracao(
+	default ResponseEntity<List<ApuracaoDTO>> apuracao(
 			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta)
 	{
 		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
