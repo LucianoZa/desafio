@@ -18,6 +18,4 @@ public interface IvotoDAO extends JpaRepository<Voto, Long> {
     //Spring Data com @Query e @NamedNativeQuery @SqlResultSetMapping na entidade Voto
     @Query(nativeQuery = true)
     List<ApuracaoDTO> GetApuracao(Long codPauta);
-
-
 }

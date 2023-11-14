@@ -1,6 +1,7 @@
 package br.com.desafio.repository;
 
 import br.com.desafio.domain.entity.Pauta;
+import br.com.desafio.model.SessaoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -52,4 +53,8 @@ public class PautaDAOImpl{
         return ipautaDAO.findAll(pageable).toList();
     }
 
+    @Transactional(readOnly = true)
+    public List<SessaoDTO> GetSessao(Long codPauta) {
+        return ipautaDAO.GetSessao(codPauta);
+    }
 }

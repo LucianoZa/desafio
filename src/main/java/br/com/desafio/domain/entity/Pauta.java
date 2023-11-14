@@ -1,11 +1,22 @@
 package br.com.desafio.domain.entity;
 
-import lombok.*;
+import br.com.desafio.model.SessaoDTO;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+
+@NamedNativeQuery(name = "Pauta.GetSessao",
+        query = "select cod_pauta from pauta where dt_ini_votacao <= now() and now() <= dt_fim_votacao and cod_pauta = :codPauta ",
+        resultSetMapping = "Mapping.SessaoDTO")
+@SqlResultSetMapping(name = "Mapping.SessaoDTO",
+        classes = @ConstructorResult(targetClass = SessaoDTO.class,
+                columns = {
+                        @ColumnResult(name = "cod_pauta")}))
 
 @Entity
 @Table(name = "pauta")

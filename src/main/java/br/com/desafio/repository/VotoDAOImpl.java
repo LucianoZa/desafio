@@ -31,6 +31,7 @@ public class VotoDAOImpl {
         return ivotoDAO.findByCodPauta(codPauta, pageable);
     }
 
+    @Transactional(readOnly = true)
     public List<ApuracaoDTO> GetApuracao(Long codPauta) {
         return ivotoDAO.GetApuracao(codPauta);
     }

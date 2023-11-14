@@ -1,7 +1,7 @@
 package br.com.desafio.controller.exceptions;
 
+import br.com.desafio.service.exceptions.DataIntegrityViolationException;
 import br.com.desafio.service.exceptions.ObjectNotFoundException;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -2,7 +2,9 @@ package br.com.desafio.service;
 
 import br.com.desafio.domain.entity.Voto;
 import br.com.desafio.model.ApuracaoDTO;
+import br.com.desafio.model.SessaoDTO;
 import br.com.desafio.model.VotoDTO;
+import br.com.desafio.repository.PautaDAOImpl;
 import br.com.desafio.repository.VotoDAOImpl;
 import br.com.desafio.service.exceptions.DataIntegrityViolationException;
 import br.com.desafio.service.exceptions.ObjectNotFoundException;
@@ -25,6 +27,9 @@ public class VotoServiceImpl implements IvotoService{
     @Autowired
     VotoDAOImpl dao;
 
+    @Autowired
+    PautaDAOImpl pautaDao;
+
     @Override
     public Voto create(VotoDTO obj) {
         findByCodPautaAndCpf(obj);
@@ -32,10 +37,11 @@ public class VotoServiceImpl implements IvotoService{
     }
 
     public void findByCodPautaAndCpf(VotoDTO obj) {
+        List<SessaoDTO> pauta = pautaDao.GetSessao(obj.getCodPauta());
+        if (pauta.isEmpty()) throw new DataIntegrityViolationException("Sessão Encerrada");
         Optional<Voto> voto = dao.findByCodPautaAndCpf(obj.getCodPauta(), obj.getCpf());
-        if (voto.isPresent()) {
-            throw new DataIntegrityViolationException("Voto já Registrado");
-        }
+        if (voto.isPresent()) throw new DataIntegrityViolationException("Voto já Registrado");
+
     }
 
     @Override

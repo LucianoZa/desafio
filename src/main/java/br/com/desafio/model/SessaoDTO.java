@@ -6,21 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigInteger;
+
 @Setter @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VotoDTO {
+public class SessaoDTO {
 
-    @JsonProperty("id")
-    private Long id;
-
-    @JsonProperty("codPauta")
-    private Long codPauta;
-
-    @JsonProperty("cpf")
-    private String cpf;
-
-    @JsonProperty("voto")
-    private String voto;
+    @JsonProperty("cod_Pauta")
+    private BigInteger cod_Pauta;
 
 }
