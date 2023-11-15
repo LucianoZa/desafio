@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Sessão de Votação Validações">
+    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Testes Postman ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/IpautaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Pauta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/PautaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/model/PautaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/repository/PautaDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/exceptions/ControllerExceptionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/exceptions/ControllerExceptionHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/desafio/DesafioApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/DesafioApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/PautaControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/PautaControllerImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +109,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.DesafioApplication">
+  <component name="RunManager" selected="JUnit.All in desafio (2)">
     <configuration name="DesafioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.desafio.DesafioApplication" />
       <module name="desafio" />
@@ -126,14 +123,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in desafio (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="desafio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in desafio (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio" />
       <option name="PACKAGE_NAME" value="" />
@@ -142,33 +131,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerExceptionHandlerTest.whenObjectNotFoundExceptionThenAResponseEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in desafio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.desafio.controller.exceptions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.desafio.controller.exceptions" />
-      <option name="MAIN_CLASS_NAME" value="br.com.desafio.controller.exceptions.ControllerExceptionHandlerTest" />
-      <option name="METHOD_NAME" value="whenObjectNotFoundExceptionThenAResponseEntity" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerExceptionHandlerTest.whendataIntegrityViolationExceptionThenAResponseEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PautaControllerImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.desafio.controller.exceptions.*" />
+          <option name="PATTERN" value="br.com.desafio.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.com.desafio.controller.exceptions" />
-      <option name="MAIN_CLASS_NAME" value="br.com.desafio.controller.exceptions.ControllerExceptionHandlerTest" />
-      <option name="METHOD_NAME" value="whendataIntegrityViolationExceptionThenAResponseEntity" />
+      <option name="PACKAGE_NAME" value="br.com.desafio.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.desafio.controller.PautaControllerImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PautaControllerImplTest.whenFindByDtIniVotacaoIsNullThenReturnListOfPautaDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="desafio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.desafio.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.desafio.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.desafio.controller.PautaControllerImplTest" />
+      <option name="METHOD_NAME" value="whenFindByDtIniVotacaoIsNullThenReturnListOfPautaDTO" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DesafioApplication" />
-        <item itemvalue="JUnit.All in desafio (1)" />
-        <item itemvalue="JUnit.ControllerExceptionHandlerTest.whendataIntegrityViolationExceptionThenAResponseEntity" />
-        <item itemvalue="JUnit.ControllerExceptionHandlerTest.whenObjectNotFoundExceptionThenAResponseEntity" />
         <item itemvalue="JUnit.All in desafio (2)" />
+        <item itemvalue="JUnit.All in desafio" />
+        <item itemvalue="JUnit.PautaControllerImplTest" />
+        <item itemvalue="JUnit.PautaControllerImplTest.whenFindByDtIniVotacaoIsNullThenReturnListOfPautaDTO" />
+        <item itemvalue="Application.DesafioApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699986373787</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Testes Postman ok">
+      <option name="closed" value="true" />
+      <created>1699998425869</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699998425869</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +341,8 @@
     <MESSAGE value="Apuração @query" />
     <MESSAGE value="Apuração Spring Data com @Query e @NamedNativeQuery @SqlResultSetMapping na entidade Voto" />
     <MESSAGE value="Sessão de Votação Validações" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sessão de Votação Validações" />
+    <MESSAGE value="Testes Postman ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testes Postman ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -355,8 +360,11 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/desafio$DesafioApplication.ic" NAME="DesafioApplication Coverage Results" MODIFIED="1699998620710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.com.desafio.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/desafio$All_in_desafio__1_.ic" NAME="All in desafio (1) Coverage Results" MODIFIED="1699539919726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/desafio$All_in_desafio__2_.ic" NAME="All in desafio (2) Coverage Results" MODIFIED="1699536587776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/desafio$All_in_desafio__2_.ic" NAME="All in desafio (2) Coverage Results" MODIFIED="1700048736264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/desafio$PautaServiceImplTest_whenFindPautaByIdThenReturnAnObjectNotFoundException.ic" NAME="PautaServiceImplTest.whenFindPautaByIdThenReturnAnObjectNotFoundException Coverage Results" MODIFIED="1699475931405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.desafio.service.*</FILTER>
     </SUITE>
@@ -364,6 +372,9 @@
     <SUITE FILE_PATH="coverage/desafio$PautaServiceImplTest.ic" NAME="PautaServiceImplTest Coverage Results" MODIFIED="1699480120369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.desafio.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/desafio$All_in_desafio.ic" NAME="All in desafio Coverage Results" MODIFIED="1699528775674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/desafio$PautaControllerImplTest.ic" NAME="PautaControllerImplTest Coverage Results" MODIFIED="1699999741084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.com.desafio.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/desafio$All_in_desafio.ic" NAME="All in desafio Coverage Results" MODIFIED="1700046098687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -62,7 +62,6 @@ public class PautaControllerImpl implements IpautaController {
 		List<Pauta> list = service.findAll(PageRequest.of(page, size));
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
-
 	}
 
 	public ResponseEntity<List<PautaDTO>> findByDtIniVotacaoIsNull(
