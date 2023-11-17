@@ -41,7 +41,6 @@ public class VotoServiceImpl implements IvotoService{
         if (pauta.isEmpty()) throw new DataIntegrityViolationException("Sessão Encerrada");
         Optional<Voto> voto = dao.findByCodPautaAndCpf(obj.getCodPauta(), obj.getCpf());
         if (voto.isPresent()) throw new DataIntegrityViolationException("Voto já Registrado");
-
     }
 
     @Override
@@ -50,8 +49,6 @@ public class VotoServiceImpl implements IvotoService{
         return obj.orElseThrow(() ->new ObjectNotFoundException(VOTO_NAO_ENCONTRADO));
     }
 
-    public List<ApuracaoDTO> apuracao(Long codPauta) {
-        return dao.GetApuracao(codPauta);
-    }
+    public List<ApuracaoDTO> apuracao(Long codPauta) {return dao.GetApuracao(codPauta);}
 
 }

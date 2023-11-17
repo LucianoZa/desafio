@@ -44,9 +44,7 @@ public class PautaControllerImpl implements IpautaController {
 			@RequestBody PautaDTO obj,
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id){
 			obj.setId(id);
-			if (obj.getDtFimVotacao() == null) {
-				obj.setDtFimVotacao(obj.getDtIniVotacao().plusMinutes(1));
-			}
+			if (obj.getDtFimVotacao() == null) { obj.setDtFimVotacao(obj.getDtIniVotacao().plusMinutes(1));	}
 			Pauta newObj = service.update(obj);
 		return ResponseEntity.ok().body(mapper.map(newObj, PautaDTO.class));
 	}

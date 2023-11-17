@@ -58,7 +58,6 @@ class PautaControllerImplTest {
         startPauta();
     }
 
-
     @Test
     void whenCreateThenReturnCreatedAndPautaDTO() {
         when(service.create(pautaDTO)).thenReturn(pauta);
@@ -91,7 +90,7 @@ class PautaControllerImplTest {
     }
 
     @Test
-    void wheDeleteThenReturnSuccess() {
+    void wheDeleteWithSuccess() {
         doNothing().when(service).delete(anyLong());
 
         ResponseEntity<PautaDTO> response = controller.delete(ID);
@@ -205,8 +204,6 @@ class PautaControllerImplTest {
         assertEquals(DATEINI, response.getBody().get(INDEX).getDtIniVotacao());
         assertEquals(DATEFIM, response.getBody().get(INDEX).getDtFimVotacao());
     }
-
-
 
     private void startPauta() {
         pauta = new Pauta(ID, NAME, DATEINI, DATEFIM);

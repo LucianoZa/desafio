@@ -25,24 +25,28 @@ import java.util.stream.Collectors;
 @Tag(name = "/v1/pauta/{codPauta}")
 public class VotoControllerImpl implements IvotoController {
 
+	public static final String PAGE_DEFAULT = "0";
+	public static final String SIZE_DEFAULT = "10";
+	public static final String PATH = "/{votacao}";
 	@Autowired
 	VotoServiceImpl service;
 
 	@Autowired
 	private ModelMapper mapper;
 
-	public ResponseEntity<VotoDTO> create(@RequestBody VotoDTO obj,
-										  @ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
+	public ResponseEntity<VotoDTO> create(
+			@RequestBody VotoDTO obj,
+			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
 		obj.setCodPauta(codPauta);
-		Voto newVoto = service.create(obj);
-		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{votacao}").buildAndExpand(newVoto.getId()).toString());
+		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path(PATH)
+					.buildAndExpand(service.create(obj).getId()).toString());
 		return ResponseEntity.created(uri).build();
 	}
 
 	public ResponseEntity<List<VotoDTO>> findByCodPauta(
 			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta,
-			@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "size", defaultValue = "10") Integer size) {
+			@RequestParam(value = "page", defaultValue = PAGE_DEFAULT) Integer page,
+			@RequestParam(value = "size", defaultValue = SIZE_DEFAULT) Integer size) {
 		List<Voto> list = service.findByCodPauta(codPauta, PageRequest.of(page, size));
 		List<VotoDTO> listDTO = list.stream().map(x -> mapper.map(x, VotoDTO.class)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);

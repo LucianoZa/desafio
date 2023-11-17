@@ -1,7 +1,10 @@
 package br.com.desafio.domain.entity;
 
 import br.com.desafio.model.ApuracaoDTO;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -22,7 +25,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "voto")
-@Data
+@Setter @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Voto {
 
     @Id

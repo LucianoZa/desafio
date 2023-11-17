@@ -17,12 +17,13 @@ import java.util.Optional;
 public class PautaServiceImpl implements IpautaService{
 
     public static final String PAUTA_NAO_ENCONTRADA = "Pauta não encontrada";
+    public static final String PAUTA_JA_CADASTRADA  = "Pauta já cadastrada";
+
     @Autowired
     private PautaDAOImpl dao;
 
     @Autowired
     private ModelMapper mapper;
-
 
     public Pauta create(PautaDTO obj) {
         findByNomPauta(obj);
@@ -31,19 +32,21 @@ public class PautaServiceImpl implements IpautaService{
 
     @Override
     public Pauta update(PautaDTO obj) {
+        findByNomPauta(obj);
         return dao.update(mapper.map(obj, Pauta.class));
     }
 
     @Override
     public void delete(Long id) {
+        findById(id);
         dao.deleteById(id);
     }
 
     @Override
     public void findByNomPauta(PautaDTO obj) {
         Optional<Pauta> pauta = dao.findByNomPauta(obj.getNomPauta());
-        if (pauta.isPresent()) {
-            throw new DataIntegrityViolationException("Pauta já Cadastrada");
+        if (pauta.isPresent() && !pauta.get().getId().equals(obj.getId())) {
+            throw new DataIntegrityViolationException(PAUTA_JA_CADASTRADA);
         }
     }
 
