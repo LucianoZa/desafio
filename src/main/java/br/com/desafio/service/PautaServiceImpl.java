@@ -17,7 +17,7 @@ import java.util.Optional;
 public class PautaServiceImpl implements IpautaService{
 
     public static final String PAUTA_NAO_ENCONTRADA = "Pauta não encontrada";
-    public static final String PAUTA_JA_CADASTRADA  = "Pauta já cadastrada";
+    public static final String NOME_PAUTA_JA_CADASTRADO  = "Nome da pauta já cadastrado";
 
     @Autowired
     private PautaDAOImpl dao;
@@ -46,7 +46,7 @@ public class PautaServiceImpl implements IpautaService{
     public void findByNomPauta(PautaDTO obj) {
         Optional<Pauta> pauta = dao.findByNomPauta(obj.getNomPauta());
         if (pauta.isPresent() && !pauta.get().getId().equals(obj.getId())) {
-            throw new DataIntegrityViolationException(PAUTA_JA_CADASTRADA);
+            throw new DataIntegrityViolationException(NOME_PAUTA_JA_CADASTRADO);
         }
     }
 

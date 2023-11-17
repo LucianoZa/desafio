@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Testes Controller 100% ok">
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/VotoControllerImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/service/VotoServiceImplTest.java" afterDir="false" />
+    <list default="true" id="eecc269e-1516-4822-bc9d-c0d9b2d21e01" name="Changes" comment="Testes Controller e Service 100% ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/VotoControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/controller/VotoControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/domain/entity/Voto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/VotoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/desafio/service/VotoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/PautaControllerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/controller/PautaControllerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/com/desafio/service/PautaServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/desafio/service/PautaServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +108,20 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in desafio">
+  <component name="RunManager" selected="JUnit.All in desafio (2)">
+    <configuration name="DesafioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.desafio.DesafioApplication" />
+      <module name="desafio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.desafio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in desafio (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio" />
       <option name="PACKAGE_NAME" value="" />
@@ -125,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in desafio (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in desafio (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="desafio" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -137,21 +142,6 @@
       <module name="desafio" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PautaServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="desafio" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.desafio.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.desafio.service" />
-      <option name="MAIN_CLASS_NAME" value="br.com.desafio.service.PautaServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in desafio (2)" />
+        <item itemvalue="JUnit.All in desafio (1)" />
+        <item itemvalue="Application.DesafioApplication" />
         <item itemvalue="JUnit.All in desafio" />
         <item itemvalue="JUnit.VotoServiceImplTest" />
-        <item itemvalue="JUnit.PautaServiceImplTest" />
-        <item itemvalue="JUnit.All in desafio (3)" />
-        <item itemvalue="JUnit.All in desafio (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700049122954</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Testes Controller e Service 100% ok">
+      <option name="closed" value="true" />
+      <created>1700230603914</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700230603914</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,20 +350,36 @@
     <MESSAGE value="Sessão de Votação Validações" />
     <MESSAGE value="Testes Postman ok" />
     <MESSAGE value="Testes Controller 100% ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testes Controller 100% ok" />
+    <MESSAGE value="Testes Controller e Service 100% ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testes Controller e Service 100% ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/br/com/desafio/service/PautaServiceImplTest.java</url>
-          <line>270</line>
+          <line>271</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/desafio/controller/VotoControllerImpl.java</url>
           <line>37</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/desafio/controller/PautaControllerImpl.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/desafio/service/PautaServiceImpl.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -378,8 +392,8 @@
     <SUITE FILE_PATH="coverage/desafio$DesafioApplication.ic" NAME="DesafioApplication Coverage Results" MODIFIED="1699998620710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.desafio.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/desafio$All_in_desafio__1_.ic" NAME="All in desafio (1) Coverage Results" MODIFIED="1700177047070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/desafio$VotoServiceImplTest.ic" NAME="VotoServiceImplTest Coverage Results" MODIFIED="1700230055526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/desafio$All_in_desafio__1_.ic" NAME="All in desafio (1) Coverage Results" MODIFIED="1700246429551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/desafio$VotoServiceImplTest.ic" NAME="VotoServiceImplTest Coverage Results" MODIFIED="1700230403474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.desafio.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/desafio$All_in_desafio__2_.ic" NAME="All in desafio (2) Coverage Results" MODIFIED="1700173044720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -398,6 +412,6 @@
     <SUITE FILE_PATH="coverage/desafio$PautaControllerImplTest.ic" NAME="PautaControllerImplTest Coverage Results" MODIFIED="1700148531258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.desafio.controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/desafio$All_in_desafio.ic" NAME="All in desafio Coverage Results" MODIFIED="1700168861136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/desafio$All_in_desafio.ic" NAME="All in desafio Coverage Results" MODIFIED="1700230501068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

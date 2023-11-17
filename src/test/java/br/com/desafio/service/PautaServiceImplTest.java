@@ -36,8 +36,9 @@ class PautaServiceImplTest {
     public static final int INDEX = 0;
     public static final int PAGE = 0;
     public static final int SIZE = 1;
-    public static final String PAUTA_JA_CADASTRADA = "Pauta já cadastrada";
     public static final String PAUTA_NAO_ENCONTRADA = "Pauta não encontrada";
+    public static final String NOME_PAUTA_JA_CADASTRADO = "Nome da pauta já cadastrado";
+
     @InjectMocks
     private PautaServiceImpl service;
     @Mock
@@ -79,7 +80,7 @@ class PautaServiceImplTest {
             service.create(pautaDTO);
         } catch (Exception ex) {
             assertEquals(DataIntegrityViolationException.class, ex.getClass());
-            assertEquals(PAUTA_JA_CADASTRADA, ex.getMessage());
+            assertEquals(NOME_PAUTA_JA_CADASTRADO, ex.getMessage());
         }
     }
 
@@ -107,7 +108,7 @@ class PautaServiceImplTest {
             service.update(pautaDTO);
         } catch (Exception ex) {
             assertEquals(DataIntegrityViolationException.class, ex.getClass());
-            assertEquals(PAUTA_JA_CADASTRADA, ex.getMessage());
+            assertEquals(NOME_PAUTA_JA_CADASTRADO, ex.getMessage());
         }
     }
 
