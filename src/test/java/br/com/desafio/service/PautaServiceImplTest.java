@@ -76,7 +76,7 @@ class PautaServiceImplTest {
         when(dao.findByNomPauta(anyString())).thenReturn(optionalPauta);
 
         try{
-            optionalPauta.get().setId(2L);
+            optionalPauta.ifPresent(value -> value.setId(2L));
             service.create(pautaDTO);
         } catch (Exception ex) {
             assertEquals(DataIntegrityViolationException.class, ex.getClass());
@@ -104,7 +104,7 @@ class PautaServiceImplTest {
         when(dao.findByNomPauta(anyString())).thenReturn(optionalPauta);
 
         try{
-            optionalPauta.get().setId(2L);
+            optionalPauta.ifPresent(value -> value.setId(2L));
             service.update(pautaDTO);
         } catch (Exception ex) {
             assertEquals(DataIntegrityViolationException.class, ex.getClass());

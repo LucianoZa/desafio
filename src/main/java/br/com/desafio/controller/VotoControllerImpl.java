@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@Tag(name = "/v1/pauta/{codPauta}")
+@Tag(name = "Votação")
 public class VotoControllerImpl implements IvotoController {
 
 	public static final String PAGE_DEFAULT = "0";

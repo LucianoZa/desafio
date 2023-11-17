@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@Tag(name = "v1/Pauta")
+@Tag(name = "Pauta")
 public class PautaControllerImpl implements IpautaController {
 
 	@Autowired
