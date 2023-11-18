@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
         query = "select v.cod_Pauta cod_Pauta, " +
                 "       (SELECT COUNT(v2.voto)  FROM voto v2 WHERE v2.cod_pauta = :codPauta AND v2.voto = 'S') votosTotalSim, " +
                 "       COUNT(voto) votosTotal  " +
-                "from Voto v where v.cod_Pauta = :codPauta ",
+                "from voto v where v.cod_Pauta = :codPauta ",
         resultSetMapping = "Mapping.ApuracaoDTO")
 @SqlResultSetMapping(name = "Mapping.ApuracaoDTO",
         classes = @ConstructorResult(targetClass = ApuracaoDTO.class,
@@ -28,7 +28,7 @@ import javax.validation.constraints.Size;
 @Setter @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Voto {
+public class voto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
