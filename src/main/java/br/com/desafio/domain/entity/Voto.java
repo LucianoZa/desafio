@@ -28,7 +28,7 @@ import javax.validation.constraints.Size;
 @Setter @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class voto {
+public class Voto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
