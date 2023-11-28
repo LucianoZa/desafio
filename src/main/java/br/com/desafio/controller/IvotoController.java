@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,12 +38,11 @@ public interface IvotoController {
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Created") })
 	@RequestMapping( consumes = {
 			"application/json" }, method = RequestMethod.POST)
-	default ResponseEntity<VotoDTO> create(@RequestBody VotoDTO obj, @ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta) {
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+	default ResponseEntity<VotoDTO> create(
+			@RequestBody @Valid VotoDTO obj,
+			@ApiParam(value = "codPauta", required = true) @PathVariable
+			@Min(value = 0, message = "{pauta.id.blank}") String codPauta) {
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -52,15 +52,13 @@ public interface IvotoController {
 	@RequestMapping(value = "/findByCodPauta", produces = {
 			"application/json" }, method = RequestMethod.GET)
 	default ResponseEntity<List<VotoDTO>> findByCodPauta(
-			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta,
+			@ApiParam(value = "codPauta", required = true) @PathVariable
+			@Min(value = 0,
+					message = "{pauta.id.blank}") String codPauta,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -70,13 +68,11 @@ public interface IvotoController {
 	@RequestMapping(value = "/apuracao", produces = {
 			"application/json" }, method = RequestMethod.GET)
 	default ResponseEntity<List<ApuracaoDTO>> apuracao(
-			@ApiParam(value = "codPauta", required = true) @Valid @PathVariable Long codPauta)
+			@ApiParam(value = "codPauta", required = true) @PathVariable
+			@Min(value = 0,
+					message = "{pauta.id.blank}") String codPauta)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 }

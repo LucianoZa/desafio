@@ -29,7 +29,7 @@ public class PautaControllerImpl implements IpautaController {
 	@Autowired
 	private ModelMapper mapper;
 
-	public ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
+	public ResponseEntity<PautaDTO> create(@RequestBody @Valid PautaDTO obj) {
 		Pauta newPauta = service.create(obj);
 		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newPauta.getId()).toString());
 		return ResponseEntity.created(uri).build();
@@ -41,7 +41,7 @@ public class PautaControllerImpl implements IpautaController {
 	}
 
 	public ResponseEntity<PautaDTO> update(
-			@RequestBody PautaDTO obj,
+			@RequestBody @Valid PautaDTO obj,
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id){
 			obj.setId(id);
 			if (obj.getDtFimVotacao() == null) { obj.setDtFimVotacao(obj.getDtIniVotacao().plusMinutes(1));	}

@@ -9,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.math.BigInteger;
 
 @NamedNativeQuery(name = "Voto.GetApuracao",
         query = "select v.cod_Pauta cod_Pauta, " +
@@ -33,10 +34,10 @@ public class Voto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_voto")
-    private Long id;
+    private BigInteger id;
 
     @Column(name = "cod_pauta")
-    private Long codPauta;
+    private BigInteger codPauta;
 
     @Basic(optional = false)
     @Size(max = 11)

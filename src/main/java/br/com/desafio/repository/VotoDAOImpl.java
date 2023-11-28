@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,15 +25,15 @@ public class VotoDAOImpl {
     public Voto create(Voto voto) { return ivotoDAO.save(voto); }
 
     @Transactional(readOnly = true)
-    public Optional<Voto> findByCodPautaAndCpf(Long codPauta, String cpf) { return ivotoDAO.findByCodPautaAndCpf(codPauta, cpf);}
+    public Optional<Voto> findByCodPautaAndCpf(BigInteger codPauta, String cpf) { return ivotoDAO.findByCodPautaAndCpf(codPauta, cpf);}
 
     @Transactional(readOnly = true)
-    public List<Voto> findByCodPauta(Long codPauta, Pageable pageable) {
+    public List<Voto> findByCodPauta(BigInteger codPauta, Pageable pageable) {
         return ivotoDAO.findByCodPauta(codPauta, pageable);
     }
 
     @Transactional(readOnly = true)
-    public List<ApuracaoDTO> GetApuracao(Long codPauta) {
+    public List<ApuracaoDTO> GetApuracao(BigInteger codPauta) {
         return ivotoDAO.GetApuracao(codPauta);
     }
 

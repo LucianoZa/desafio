@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,18 +38,18 @@ public class VotoServiceImpl implements IvotoService{
     }
 
     public void findByCodPautaAndCpf(VotoDTO obj) {
-        List<SessaoDTO> pauta = pautaDao.GetSessao(obj.getCodPauta());
-        if (pauta.isEmpty()) throw new DataIntegrityViolationException("Sessão Encerrada");
+        List<SessaoDTO> pauta = pautaDao.GetSessao(obj.getCodPauta().longValue());
+        if (pauta.isEmpty()) throw new DataIntegrityViolationException("{sessao.encerrada.inexistente}");
         Optional<Voto> voto = dao.findByCodPautaAndCpf(obj.getCodPauta(), obj.getCpf());
-        if (voto.isPresent()) throw new DataIntegrityViolationException("Voto já Registrado");
+        if (voto.isPresent()) throw new DataIntegrityViolationException("{voto.ja.cadastrado}");
     }
 
     @Override
-    public List<Voto> findByCodPauta(Long codPauta, Pageable pageable) {
+    public List<Voto> findByCodPauta(BigInteger codPauta, Pageable pageable) {
         Optional<List<Voto>> obj = Optional.ofNullable(dao.findByCodPauta(codPauta, pageable));
         return obj.orElseThrow(() ->new ObjectNotFoundException(VOTO_NAO_ENCONTRADO));
     }
 
-    public List<ApuracaoDTO> apuracao(Long codPauta) {return dao.GetApuracao(codPauta);}
+    public List<ApuracaoDTO> apuracao(BigInteger codPauta) {return dao.GetApuracao(codPauta);}
 
 }

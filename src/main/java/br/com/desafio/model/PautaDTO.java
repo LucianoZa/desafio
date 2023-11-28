@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Setter @Getter
@@ -16,6 +17,7 @@ public class PautaDTO {
     @JsonProperty("codPauta")
     private Long id;
 
+    @NotBlank
     @JsonProperty("nomPauta")
     private String nomPauta;
 

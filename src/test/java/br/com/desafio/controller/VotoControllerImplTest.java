@@ -25,12 +25,11 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
 class VotoControllerImplTest {
 
-    public static final Long ID                         = 1L;
+    public static final BigInteger ID                   = BigInteger.valueOf(1);
     public static final Long CODPAUTA                   = 1L;
     public static final String CPF                      = "12345678901";
     public static final String VOTO                     = "S";
@@ -73,7 +72,7 @@ class VotoControllerImplTest {
     void whenCreateThenReturnCreatedAndVotoDTO() {
         when(service.create(any())).thenReturn(voto);
 
-        ResponseEntity<VotoDTO> response = controller.create(votoDTO, CODPAUTA);
+        ResponseEntity<VotoDTO> response = controller.create(votoDTO, COD_PAUTA.toString());
 
         assertEquals(ResponseEntity.class, response.getClass());
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
@@ -84,10 +83,10 @@ class VotoControllerImplTest {
     @Test
     void whenFindByCodPautaThenReturnAListOfVotoDTO() {
 
-        when(service.findByCodPauta(CODPAUTA, PageRequest.of(PAGE, SIZE))).thenReturn(votoLista);
+        when(service.findByCodPauta(COD_PAUTA, PageRequest.of(PAGE, SIZE))).thenReturn(votoLista);
         when(mapper.map(any(), any())).thenReturn(votoDTO);
 
-        ResponseEntity<List<VotoDTO>> response = controller.findByCodPauta(CODPAUTA, PAGE, SIZE);
+        ResponseEntity<List<VotoDTO>> response = controller.findByCodPauta(COD_PAUTA.toString(), PAGE, SIZE);
 
         assertNotNull(response);
         assertNotNull(response.getBody());
@@ -97,7 +96,7 @@ class VotoControllerImplTest {
         assertEquals(VotoDTO.class, response.getBody().get(INDEX).getClass());
 
         assertEquals(ID, response.getBody().get(INDEX).getId());
-        assertEquals(CODPAUTA, response.getBody().get(INDEX).getCodPauta());
+        assertEquals(COD_PAUTA, response.getBody().get(INDEX).getCodPauta());
         assertEquals(CPF, response.getBody().get(INDEX).getCpf());
         assertEquals(VOTO, response.getBody().get(INDEX).getVoto());
 
@@ -106,10 +105,10 @@ class VotoControllerImplTest {
     @Test
     void whenApuracaoThenReturnAListOfApuracao() {
 
-        when(service.apuracao(anyLong())).thenReturn(apuracaoDTOLista);
+        when(service.apuracao(any())).thenReturn(apuracaoDTOLista);
         when(mapper.map(any(), any())).thenReturn(apuracaoDTO);
 
-        ResponseEntity<List<ApuracaoDTO>> response = controller.apuracao(CODPAUTA);
+        ResponseEntity<List<ApuracaoDTO>> response = controller.apuracao(COD_PAUTA.toString());
 
         assertNotNull(response);
         assertNotNull(response.getBody());
@@ -124,10 +123,10 @@ class VotoControllerImplTest {
     }
 
     private void startVoto() {
-        voto = new Voto(ID, CODPAUTA, CPF, VOTO);
+        voto = new Voto(ID, COD_PAUTA, CPF, VOTO);
         votoLista.add(voto);
-        votoDTO = new VotoDTO(ID, CODPAUTA, CPF, VOTO);
-        optionalVoto = Optional.of(new Voto(ID, CODPAUTA, CPF, VOTO));
+        votoDTO = new VotoDTO(ID, COD_PAUTA, CPF, VOTO);
+        optionalVoto = Optional.of(new Voto(ID, COD_PAUTA, CPF, VOTO));
         apuracaoDTO = new ApuracaoDTO(COD_PAUTA, VOTOSTOTALSIM, VOTOSTOTAL);
         apuracaoDTOLista.add(apuracaoDTO);
     }
