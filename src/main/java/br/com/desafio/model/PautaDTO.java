@@ -17,7 +17,7 @@ public class PautaDTO {
     @JsonProperty("codPauta")
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "{pauta.nome.not.blank}")
     @JsonProperty("nomPauta")
     private String nomPauta;
 

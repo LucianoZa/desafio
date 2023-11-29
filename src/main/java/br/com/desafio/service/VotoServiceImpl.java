@@ -20,7 +20,7 @@ import java.util.Optional;
 @Service
 public class VotoServiceImpl implements IvotoService{
 
-    public static final String VOTO_NAO_ENCONTRADO = "Votação não encontrada";
+    public static final String VOTO_NAO_ENCONTRADO = "{voto.nao.encontrado}";
 
     @Autowired
     private ModelMapper mapper;

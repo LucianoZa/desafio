@@ -36,13 +36,16 @@ public class PautaDAOImpl{
     public Optional<Pauta>  findById(Long id) { return ipautaDAO.findById(id);}
 
     @Transactional(readOnly = true)
-    public List<Pauta> findByDtIniVotacaoIsNull(Pageable pageable) { return ipautaDAO.findByDtIniVotacaoIsNull(pageable); }
+    public List<Pauta> findByDtIniVotacaoIsNull(Pageable pageable) {
+        return ipautaDAO.findByDtIniVotacaoIsNull(pageable); }
 
     @Transactional(readOnly = true)
-    public List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(Pageable pageable) { return ipautaDAO.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(pageable); }
+    public List<Pauta> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(Pageable pageable) {
+        return ipautaDAO.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(pageable); }
 
     @Transactional(readOnly = true)
-    public List<Pauta> findByDtFimVotacaoIsNotNull(Pageable pageable) { return ipautaDAO.findByDtFimVotacaoIsNotNull(pageable); }
+    public List<Pauta> findByDtFimVotacaoIsNotNull(Pageable pageable) {
+        return ipautaDAO.findByDtFimVotacaoIsNotNull(pageable); }
 
     @Transactional(readOnly = true)
     public List<Pauta> findAll(Pageable pageable) {

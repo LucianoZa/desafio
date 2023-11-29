@@ -31,14 +31,11 @@ public class PautaControllerImpl implements IpautaController {
 
 	public ResponseEntity<PautaDTO> create(@RequestBody @Valid PautaDTO obj) {
 		Pauta newPauta = service.create(obj);
-		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newPauta.getId()).toString());
+		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").
+				buildAndExpand(newPauta.getId()).toString());
 		return ResponseEntity.created(uri).build();
 	}
 
-	public ResponseEntity<PautaDTO> delete(@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
-		service.delete(id);
-		return ResponseEntity.noContent().build();
-	}
 
 	public ResponseEntity<PautaDTO> update(
 			@RequestBody @Valid PautaDTO obj,
@@ -49,10 +46,18 @@ public class PautaControllerImpl implements IpautaController {
 		return ResponseEntity.ok().body(mapper.map(newObj, PautaDTO.class));
 	}
 
+
+	public ResponseEntity<PautaDTO> delete(@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+
+
 	public ResponseEntity<PautaDTO> findById(
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
 		return ResponseEntity.ok().body(mapper.map(service.findById(id), PautaDTO.class));
 	}
+
 
 	public ResponseEntity<List<PautaDTO>> findAll(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -62,6 +67,7 @@ public class PautaControllerImpl implements IpautaController {
 		return ResponseEntity.ok().body(listDTO);
 	}
 
+
 	public ResponseEntity<List<PautaDTO>> findByDtIniVotacaoIsNull(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
@@ -70,6 +76,7 @@ public class PautaControllerImpl implements IpautaController {
 		return ResponseEntity.ok().body(listDTO);
 	}
 
+
 	public ResponseEntity<List<PautaDTO>> findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
@@ -77,6 +84,7 @@ public class PautaControllerImpl implements IpautaController {
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDTO);
 	}
+
 
 	public ResponseEntity<List<PautaDTO>> findByDtFimVotacaoIsNotNull(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,

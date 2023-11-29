@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@Api(value = "Desafio", description = "Sessao de votacao API")
+@Api(value = "Desafio", description = "Sessao de votação API")
 @RequestMapping(value = "/v1/pauta")
 public interface IpautaController {
 
@@ -37,13 +37,10 @@ public interface IpautaController {
 	@RequestMapping( consumes = {
 			"application/json" }, method = RequestMethod.POST)
 	default ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
+
 
 	@ApiOperation(value = "Abrir Sessão", nickname = "create", notes = "Abrir uma Sessão de Votação", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Updated", response = PautaDTO.class),
@@ -54,23 +51,17 @@ public interface IpautaController {
 	default ResponseEntity<PautaDTO> update(
 			@RequestBody PautaDTO obj,
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
+
+
 	@ApiOperation(value = "Apagar Pauta", nickname = "delete", notes = "Excluir uma Pauta de votação", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 204, message = "No Content") })
 	@RequestMapping(value = "/{id}", consumes = {
 			"application/json" }, method = RequestMethod.DELETE)
 	default ResponseEntity<PautaDTO> delete(@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
@@ -83,15 +74,13 @@ public interface IpautaController {
 	default ResponseEntity<PautaDTO> findById(
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long codPauta)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consulta Pauta não Iniciada", nickname = "findByDtIniVotacaoIsNull", notes = "Consulta Pauta não Iniciada", tags = { "Pauta", })
+
+	@ApiOperation(value = "Consulta Pauta não Iniciada", nickname = "findByDtIniVotacaoIsNull",
+			notes = "Consulta Pauta não Iniciada", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/findByDtIniVotacaoIsNull", produces = {
@@ -100,15 +89,13 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consulta Pauta em Andamento", nickname = "findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull", notes = "Consulta Pauta em Andamento", tags = { "Pauta", })
+
+	@ApiOperation(value = "Consulta Pauta em Andamento", nickname = "findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull",
+			notes = "Consulta Pauta em Andamento", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull", produces = {
@@ -117,15 +104,13 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consulta Pauta Finalizada", nickname = "findByDtFimVotacaoIsNotNull", notes = "Consulta Pauta Finalizada", tags = { "Pauta", })
+
+	@ApiOperation(value = "Consulta Pauta Finalizada", nickname = "findByDtFimVotacaoIsNotNull",
+			notes = "Consulta Pauta Finalizada", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/findByDtFimVotacaoIsNotNull", produces = {
@@ -134,15 +119,13 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consulta Todas as Pautas", nickname = "findByDtFimVotacaoIsNotNull", notes = "Consulta Todas as Pautas", tags = { "Pauta", })
+
+	@ApiOperation(value = "Consulta Todas as Pautas", nickname = "findByDtFimVotacaoIsNotNull",
+			notes = "Consulta Todas as Pautas", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = PautaDTO.class, responseContainer = "List"),
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/findAll", produces = {
@@ -151,11 +134,7 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (getObjectMapper().isPresent() && getAcceptHeader().isPresent()) {
-		} else {
-			log.warn(
-					"ObjectMapper or HttpServletRequest not configured in default Desafio interface so no example is generated");
-		}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 

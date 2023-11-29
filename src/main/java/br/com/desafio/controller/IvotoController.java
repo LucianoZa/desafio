@@ -46,7 +46,9 @@ public interface IvotoController {
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consultar votos da sessão", nickname = "findByCodPauta", notes = "Consulta votos da sesssão", tags = { "Votação", })
+
+	@ApiOperation(value = "Consultar votos da sessão", nickname = "findByCodPauta", notes = "Consulta votos da sesssão",
+			tags = { "Votação", })
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = VotoDTO.class, responseContainer = "List"),
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/findByCodPauta", produces = {
@@ -62,8 +64,11 @@ public interface IvotoController {
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
-	@ApiOperation(value = "Consultar Apuração da sessão", nickname = "apuracao", notes = "Consulta resultado final de uma votação", tags = { "Votação", })
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = ApuracaoDTO.class, responseContainer = "List"),
+
+	@ApiOperation(value = "Consultar Apuração da sessão", nickname = "apuracao",
+			notes = "Consulta resultado final de uma votação", tags = { "Votação", })
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK", response = ApuracaoDTO.class,
+			responseContainer = "List"),
 			@ApiResponse(code = 404, message = "Not Found") })
 	@RequestMapping(value = "/apuracao", produces = {
 			"application/json" }, method = RequestMethod.GET)
