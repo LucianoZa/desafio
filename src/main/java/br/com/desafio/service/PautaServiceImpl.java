@@ -31,8 +31,7 @@ public class PautaServiceImpl implements IpautaService{
     }
 
     @Override
-    public Pauta update(+
-                        obj) {
+    public Pauta update(PautaDTO obj) {
         findById(obj.getId());
         findByNomPauta(obj);
         return dao.update(mapper.map(obj, Pauta.class));
