@@ -16,8 +16,8 @@ import java.util.Optional;
 @Service
 public class PautaServiceImpl implements IpautaService{
 
-    public static final String PAUTA_NAO_ENCONTRADA = "{pauta.nao.encontrada}";
-    public static final String NOME_PAUTA_JA_CADASTRADO  = "{pauta.nome.ja.cadastrado}";
+    public static final String PAUTA_NAO_ENCONTRADA = "Pauta não encontrada";
+    public static final String NOME_PAUTA_JA_CADASTRADO  = "Nome da pauta já cadastrado";
 
     @Autowired
     private PautaDAOImpl dao;
@@ -31,7 +31,8 @@ public class PautaServiceImpl implements IpautaService{
     }
 
     @Override
-    public Pauta update(PautaDTO obj) {
+    public Pauta update(+
+                        obj) {
         findById(obj.getId());
         findByNomPauta(obj);
         return dao.update(mapper.map(obj, Pauta.class));

@@ -17,7 +17,7 @@ public class PautaDTO {
     @JsonProperty("codPauta")
     private Long id;
 
-    @NotBlank(message = "{pauta.nome.not.blank}")
+    @NotBlank(message = "Informe o nome da pauta")
     @JsonProperty("nomPauta")
     private String nomPauta;
 

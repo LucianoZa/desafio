@@ -18,16 +18,15 @@ import java.util.Optional;
 @RequestMapping(value = "/v1/pauta")
 public interface IpautaController {
 
+	String OBJECT_WARN = "ObjectMapper ou HttpServletRequest não configurados na interface padrão da API Desafio, por isso nenhum modelo foi gerado";
 	Logger log = LoggerFactory.getLogger(IpautaController.class);
 
 	default Optional<ObjectMapper> getObjectMapper() {
 		return Optional.empty();
 	}
-
 	default Optional<HttpServletRequest> getRequest() {
 		return Optional.empty();
 	}
-
 	default Optional<String> getAcceptHeader() {
 		return getRequest().map(r -> r.getHeader("Accept"));
 	}
@@ -37,7 +36,7 @@ public interface IpautaController {
 	@RequestMapping( consumes = {
 			"application/json" }, method = RequestMethod.POST)
 	default ResponseEntity<PautaDTO> create(@RequestBody PautaDTO obj) {
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -51,17 +50,16 @@ public interface IpautaController {
 	default ResponseEntity<PautaDTO> update(
 			@RequestBody PautaDTO obj,
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
-
 
 	@ApiOperation(value = "Apagar Pauta", nickname = "delete", notes = "Excluir uma Pauta de votação", tags = { "Pauta", })
 	@ApiResponses(value = { @ApiResponse(code = 204, message = "No Content") })
 	@RequestMapping(value = "/{id}", consumes = {
 			"application/json" }, method = RequestMethod.DELETE)
 	default ResponseEntity<PautaDTO> delete(@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
@@ -74,7 +72,7 @@ public interface IpautaController {
 	default ResponseEntity<PautaDTO> findById(
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long codPauta)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -89,7 +87,7 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -104,7 +102,7 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -119,7 +117,7 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -134,7 +132,7 @@ public interface IpautaController {
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 

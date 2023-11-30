@@ -20,6 +20,9 @@ import java.util.Optional;
 @RequestMapping(value = "/v1/pauta/{codPauta}")
 public interface IvotoController {
 
+	String PAUTA_ID_BLANK = "Informe o código da pauta no caminho da chamada do serviço";
+	String OBJECT_WARN = "ObjectMapper ou HttpServletRequest não configurados na interface padrão da API Desafio, por isso nenhum modelo foi gerado";
+
 	Logger log = LoggerFactory.getLogger(IvotoController.class);
 
 	default Optional<ObjectMapper> getObjectMapper() {
@@ -41,8 +44,8 @@ public interface IvotoController {
 	default ResponseEntity<VotoDTO> create(
 			@RequestBody @Valid VotoDTO obj,
 			@ApiParam(value = "codPauta", required = true) @PathVariable
-			@Min(value = 0, message = "{pauta.id.blank}") String codPauta) {
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+			@Min(value = 0, message = PAUTA_ID_BLANK) String codPauta) {
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -56,11 +59,11 @@ public interface IvotoController {
 	default ResponseEntity<List<VotoDTO>> findByCodPauta(
 			@ApiParam(value = "codPauta", required = true) @PathVariable
 			@Min(value = 0,
-					message = "{pauta.id.blank}") String codPauta,
+					message = PAUTA_ID_BLANK) String codPauta,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "size", defaultValue = "10") Integer size)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
@@ -75,9 +78,9 @@ public interface IvotoController {
 	default ResponseEntity<List<ApuracaoDTO>> apuracao(
 			@ApiParam(value = "codPauta", required = true) @PathVariable
 			@Min(value = 0,
-					message = "{pauta.id.blank}") String codPauta)
+					message = PAUTA_ID_BLANK) String codPauta)
 	{
-		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn("{object.warn}");}
+		if (!getObjectMapper().isPresent() || !getAcceptHeader().isPresent()) { log.warn(OBJECT_WARN);}
 		return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	}
 }

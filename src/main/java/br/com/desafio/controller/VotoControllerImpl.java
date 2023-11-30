@@ -33,6 +33,7 @@ public class VotoControllerImpl implements IvotoController {
 	public static final String PAGE_DEFAULT = "0";
 	public static final String SIZE_DEFAULT = "10";
 	public static final String PATH = "/{votacao}";
+	public static final String PAUTA_ID_BLANK = "Informe o código da pauta no caminho da chamada do serviço";
 	@Autowired
 	VotoServiceImpl service;
 
@@ -43,7 +44,7 @@ public class VotoControllerImpl implements IvotoController {
 			@RequestBody @Valid VotoDTO obj,
 			@ApiParam(value = "codPauta", required = true) @PathVariable
 			@Min(value = 0,
-				 message = "{pauta.id.blank}") String codPauta) {
+				 message = PAUTA_ID_BLANK) String codPauta) {
 		obj.setCodPauta(new BigInteger(codPauta));
 		URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentRequest().path(PATH)
 					.buildAndExpand(service.create(obj).getId()).toString());
@@ -53,7 +54,7 @@ public class VotoControllerImpl implements IvotoController {
 	public ResponseEntity<List<VotoDTO>> findByCodPauta(
 			@ApiParam(value = "codPauta", required = true) @PathVariable
 			@Min(value = 0,
-					message = "{pauta.id.blank}") String codPauta,
+					message = PAUTA_ID_BLANK) String codPauta,
 			@RequestParam(value = "page", defaultValue = PAGE_DEFAULT) Integer page,
 			@RequestParam(value = "size", defaultValue = SIZE_DEFAULT) Integer size) {
 		List<Voto> list = service.findByCodPauta(new BigInteger(codPauta), PageRequest.of(page, size));
@@ -64,7 +65,7 @@ public class VotoControllerImpl implements IvotoController {
 	public ResponseEntity<List<ApuracaoDTO>> apuracao(
 			@ApiParam(value = "codPauta", required = true) @PathVariable
 			@Min(value = 0,
-					message = "{pauta.id.blank}") String codPauta) {
+					message = PAUTA_ID_BLANK) String codPauta) {
 		List<ApuracaoDTO> apuracao = service.apuracao(new BigInteger(codPauta));
 		return new ResponseEntity<>(apuracao, apuracao.get(0).getCod_Pauta() == null ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}

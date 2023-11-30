@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,7 +56,8 @@ public class PautaControllerImpl implements IpautaController {
 
 	public ResponseEntity<PautaDTO> findById(
 			@ApiParam(value = "id", required = true) @Valid @PathVariable Long id) {
-		return ResponseEntity.ok().body(mapper.map(service.findById(id), PautaDTO.class));
+			PautaDTO pautaDTO = mapper.map(service.findById(id), PautaDTO.class);
+		return new ResponseEntity<>(pautaDTO, pautaDTO.getId() == null ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
 
@@ -64,7 +66,7 @@ public class PautaControllerImpl implements IpautaController {
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
 		List<Pauta> list = service.findAll(PageRequest.of(page, size));
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listDTO);
+		return new ResponseEntity<>(listDTO, listDTO.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
 
@@ -73,7 +75,7 @@ public class PautaControllerImpl implements IpautaController {
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
 		List<Pauta> list = service.findByDtIniVotacaoIsNull(PageRequest.of(page, size));
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listDTO);
+		return new ResponseEntity<>(listDTO, listDTO.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
 
@@ -82,7 +84,7 @@ public class PautaControllerImpl implements IpautaController {
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
 		List<Pauta> list = service.findByDtIniVotacaoIsNotNullAndDtFimVotacaoIsNull(PageRequest.of(page, size));
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listDTO);
+		return new ResponseEntity<>(listDTO, listDTO.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
 
@@ -91,7 +93,7 @@ public class PautaControllerImpl implements IpautaController {
 			@RequestParam(value = "size", defaultValue = "10") Integer size) {
 		List<Pauta> list = service.findByDtFimVotacaoIsNotNull(PageRequest.of(page, size));
 		List<PautaDTO> listDTO = list.stream().map(x -> mapper.map(x, PautaDTO.class)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listDTO);
+		return new ResponseEntity<>(listDTO, listDTO.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
 	}
 
 }

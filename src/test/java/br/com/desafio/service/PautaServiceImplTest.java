@@ -85,7 +85,9 @@ class PautaServiceImplTest {
     }
 
     @Test
-    void whenUpdateThenReturnAnObjectPautaDTO(){
+    void whenUpdateThenReturnAnObjectPauta(){
+
+        when(dao.findById(any())).thenReturn(optionalPauta);
         when(dao.update(pauta)).thenReturn(pauta);
         when(mapper.map(any(), any())).thenReturn(pauta);
 
@@ -100,7 +102,21 @@ class PautaServiceImplTest {
     }
 
     @Test
+    void whenUpdateThenAnObjectNotFoundException() {
+        when(dao.findByNomPauta(anyString())).thenReturn(optionalPauta);
+
+        try{
+            optionalPauta.ifPresent(value -> value.setId(2L));
+            service.update(pautaDTO);
+        } catch (Exception ex) {
+            assertEquals(ObjectNotFoundException.class, ex.getClass());
+            assertEquals(PAUTA_NAO_ENCONTRADA, ex.getMessage());
+        }
+    }
+
+    @Test
     void whenUpdateThenAnDataIntegrityViolationException() {
+        when(dao.findById(any())).thenReturn(optionalPauta);
         when(dao.findByNomPauta(anyString())).thenReturn(optionalPauta);
 
         try{

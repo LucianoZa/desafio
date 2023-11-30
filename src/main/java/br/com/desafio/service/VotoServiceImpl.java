@@ -20,7 +20,9 @@ import java.util.Optional;
 @Service
 public class VotoServiceImpl implements IvotoService{
 
-    public static final String VOTO_NAO_ENCONTRADO = "{voto.nao.encontrado}";
+    public static final String VOTO_NAO_ENCONTRADO = "Voto não encontrado";
+    public static final String VOTO_JA_CADASTRADO = "Voto já cadastrado";
+    public static final String SESSAO_ENCERRADA_INEXISTENTE = "Sessão encerrada ou inexistente";
 
     @Autowired
     private ModelMapper mapper;
@@ -39,9 +41,9 @@ public class VotoServiceImpl implements IvotoService{
 
     public void findByCodPautaAndCpf(VotoDTO obj) {
         List<SessaoDTO> pauta = pautaDao.GetSessao(obj.getCodPauta().longValue());
-        if (pauta.isEmpty()) throw new DataIntegrityViolationException("{sessao.encerrada.inexistente}");
+        if (pauta.isEmpty()) throw new DataIntegrityViolationException(SESSAO_ENCERRADA_INEXISTENTE);
         Optional<Voto> voto = dao.findByCodPautaAndCpf(obj.getCodPauta(), obj.getCpf());
-        if (voto.isPresent()) throw new DataIntegrityViolationException("{voto.ja.cadastrado}");
+        if (voto.isPresent()) throw new DataIntegrityViolationException(VOTO_JA_CADASTRADO);
     }
 
     @Override

@@ -43,8 +43,8 @@ class VotoServiceImplTest {
     public static final String NAME                     = "Pauta n";
     public static final LocalDateTime DATEINI           = LocalDateTime.parse("2022-12-08T09:00");
     public static final LocalDateTime DATEFIM           = LocalDateTime.parse("2024-12-08T18:00");
-    public static final String VOTO_JA_REGISTRADO       = "{voto.ja.cadastrado}";
-    public static final String SESSAO_ENCERRADA         = "{sessao.encerrada.inexistente}";
+    public static final String VOTO_JA_REGISTRADO       = "Voto já cadastrado";
+    public static final String SESSAO_ENCERRADA         = "Sessão encerrada ou inexistente";
 
     @InjectMocks
     private VotoServiceImpl service;

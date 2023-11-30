@@ -23,14 +23,14 @@ public class VotoDTO {
     @JsonProperty("codPauta")
     private BigInteger codPauta;
 
-    @CPF (message = "{cpf.invalido}")
-    @NotNull(message = "{cpf.not.null}")
+    @CPF (message = "Informe um CPF válido")
+    @NotNull(message = "Informe o CPF do associado")
     @JsonProperty("cpf")
     private String cpf;
 
-    @NotBlank(message = "{voto.not.blank}")
+    @NotBlank(message = "Informe seu voto: 'S' para Sim ou 'N' para Não")
     @JsonProperty("voto")
-    @Pattern(regexp = "^[S|N]{1}$", message ="{voto.invalido}")
+    @Pattern(regexp = "^[S|N]{1}$", message ="Informe 'S' para Sim ou 'N' para Não")
     private String voto;
 
 }
